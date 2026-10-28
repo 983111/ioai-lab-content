@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "section": "practice-arena",
+  "description": "Original IOAI-style practice prompts for learning. These are not official past-contest tasks.",
+  "filters": [
+    "All",
+    "Beginner",
+    "Intermediate",
+    "Advanced"
+  ],
+  "problems": [
+    {
+      "id": "pa-001",
+      "title": "Clean the Messy Table",
+      "difficulty": "Beginner",
+      "topic": "Data Manipulation",
+      "estimated_minutes": 15,
+      "format": "notebook",
+      "prompt": "A CSV contains missing values, duplicate rows, and inconsistent category labels. Build a reproducible cleaning pipeline and report how many rows were changed or removed.",
+      "tasks": [
+        "Inspect shape, column types, and missingness.",
+        "Remove exact duplicates and justify any row removals.",
+        "Standardize category labels.",
+        "Return a clean DataFrame and a short data-quality summary."
+      ],
+      "constraints": [
+        "Do not silently drop rows with missing values.",
+        "Keep the original data unchanged."
+      ],
+      "starter_code": "import pandas as pd\\n\\ndf = pd.read_csv('data.csv')\\n# TODO: inspect and clean the data",
+      "evaluation": {
+        "criteria": [
+          "Correctness of cleaning",
+          "Reproducibility",
+          "Justification of decisions"
+        ],
+        "metric": "Rubric-based"
+      },
+      "hints": [
+        "Count missing values before modifying the data.",
+        "Use explicit mappings for inconsistent category labels."
+      ]
+    },
+    {
+      "id": "pa-002",
+      "title": "Build a Majority-Class Baseline",
+      "difficulty": "Beginner",
+      "topic": "Classification",
+      "estimated_minutes": 20,
+      "format": "notebook",
+      "prompt": "Given a labelled classification dataset, build a baseline that always predicts the most frequent training class. Evaluate it on held-out data and explain why this score may be misleading.",
+      "tasks": [
+        "Split data into train and test sets.",
+        "Find the majority class using training labels only.",
+        "Predict that class for every test example.",
+        "Report accuracy, precision, recall, and F1 where defined."
+      ],
+      "constraints": [
+        "Do not inspect test labels to choose the prediction.",
+        "Use a fixed random seed."
+      ],
+      "starter_code": "from sklearn.model_selection import train_test_split\\nfrom sklearn.metrics import classification_report\\n\\n# X and y: load or construct a labelled dataset\\n# TODO: split, build baseline predictions, evaluate",
+      "evaluation": {
+        "criteria": [
+          "No test-set leakage",
+          "Correct metrics",
+          "Clear interpretation"
+        ],
+        "metric": "Rubric-based"
+      },
+      "hints": [
+        "A high accuracy can be unhelpful when one class dominates.",
+        "State how undefined precision or recall is handled."
+      ]
+    },
+    {
+      "id": "pa-003",
+      "title": "Predict a Continuous Target",
+      "difficulty": "Beginner",
+      "topic": "Regression",
+      "estimated_minutes": 25,
+      "format": "notebook",
+      "prompt": "Train a regression model on tabular data and compare it with a simple baseline. Your goal is a trustworthy evaluation, not just a low training error.",
+      "tasks": [
+        "Identify numeric and categorical features.",
+        "Create a train/test split.",
+        "Fit a baseline and a linear regression model.",
+        "Compare MAE and inspect residuals."
+      ],
+      "constraints": [
+        "Fit preprocessing only on training data.",
+        "Do not select the model using test-set results."
+      ],
+      "starter_code": "from sklearn.model_selection import train_test_split\\nfrom sklearn.metrics import mean_absolute_error\\nfrom sklearn.dummy import DummyRegressor\\nfrom sklearn.linear_model import LinearRegression\\n\\n# TODO: prepare X and y, split, fit, compare",
+      "evaluation": {
+        "criteria": [
+          "Valid split",
+          "Baseline comparison",
+          "Correct metric use"
+        ],
+        "metric": "MAE"
+      },
+      "hints": [
+        "Keep the same split for both models.",
+        "Inspect whether residuals show a systematic pattern."
+      ]
+    },
+    {
+      "id": "pa-004",
+      "title": "Find the Better Decision Threshold",
+      "difficulty": "Intermediate",
+      "topic": "Model Evaluation",
+      "estimated_minutes": 30,
+      "format": "notebook",
+      "prompt": "A binary classifier outputs probabilities. Select a decision threshold that balances false positives and false negatives for a clearly stated use case.",
+      "tasks": [
+        "Generate probabilities on a validation set.",
+        "Evaluate thresholds from 0.1 to 0.9.",
+        "Plot precision, recall, and F1.",
+        "Explain the chosen threshold and its limitations."
+      ],
+      "constraints": [
+        "Do not tune the threshold on the final test set.",
+        "Report the class balance."
+      ],
+      "starter_code": "import numpy as np\\nfrom sklearn.metrics import precision_score, recall_score, f1_score\\n\\nthresholds = np.arange(0.1, 1.0, 0.1)\\n# TODO: calculate metrics for each threshold",
+      "evaluation": {
+        "criteria": [
+          "Threshold sweep",
+          "Correct metrics",
+          "Use-case reasoning"
+        ],
+        "metric": "Precision/recall/F1"
+      },
+      "hints": [
+        "A threshold of 0.5 is not automatically optimal.",
+        "Choose the metric based on the costs of each error."
+      ]
+    },
+    {
+      "id": "pa-005",
+      "title": "Spot Data Leakage",
+      "difficulty": "Intermediate",
+      "topic": "Experimental Design",
+      "estimated_minutes": 20,
+      "format": "written-plus-code",
+      "prompt": "Review an ML pipeline where scaling and feature selection are performed on the full dataset before splitting. Identify the leakage, explain why it inflates evaluation, and rewrite the pipeline safely.",
+      "tasks": [
+        "Mark every operation that learns from data.",
+        "Explain which information crosses the split boundary.",
+        "Use a scikit-learn Pipeline and train/test split.",
+        "Describe how cross-validation should be performed."
+      ],
+      "constraints": [
+        "Do not use test data for fitting preprocessing or feature selection."
+      ],
+      "starter_code": "from sklearn.pipeline import Pipeline\\nfrom sklearn.preprocessing import StandardScaler\\nfrom sklearn.feature_selection import SelectKBest\\nfrom sklearn.linear_model import LogisticRegression\\n\\n# TODO: put learned preprocessing and estimator in one pipeline",
+      "evaluation": {
+        "criteria": [
+          "Correct leakage diagnosis",
+          "Safe pipeline",
+          "Clear explanation"
+        ],
+        "metric": "Rubric-based"
+      },
+      "hints": [
+        "Any transformation that estimates parameters from data belongs inside the training workflow.",
+        "Use a pipeline during cross-validation."
+      ]
+    },
+    {
+      "id": "pa-006",
+      "title": "Improve a Noisy Image Classifier",
+      "difficulty": "Intermediate",
+      "topic": "Computer Vision",
+      "estimated_minutes": 45,
+      "format": "notebook",
+      "prompt": "Train a small image classifier and investigate one controlled improvement. Compare a baseline with one change such as augmentation, normalization, or regularization.",
+      "tasks": [
+        "Create a reproducible baseline.",
+        "Choose one improvement and explain the hypothesis.",
+        "Keep the evaluation split fixed.",
+        "Compare validation metrics and inspect error examples."
+      ],
+      "constraints": [
+        "Change one major factor at a time.",
+        "Do not tune repeatedly against the final test set."
+      ],
+      "starter_code": "import torch\\nfrom torch import nn\\nfrom torch.utils.data import DataLoader\\n\\n# TODO: load a permitted image dataset and define a small model",
+      "evaluation": {
+        "criteria": [
+          "Fair comparison",
+          "Reproducibility",
+          "Error analysis"
+        ],
+        "metric": "Validation accuracy and per-class results"
+      },
+      "hints": [
+        "Start with a small dataset such as a subset of CIFAR-10.",
+        "Use a validation set for iteration and reserve test data for final reporting."
+      ]
+    },
+    {
+      "id": "pa-007",
+      "title": "Cluster Without Labels",
+      "difficulty": "Intermediate",
+      "topic": "Unsupervised Learning",
+      "estimated_minutes": 30,
+      "format": "notebook",
+      "prompt": "Apply K-means to an unlabelled dataset. Compare cluster assignments before and after feature scaling, and discuss whether the clusters are meaningful.",
+      "tasks": [
+        "Visualize feature ranges.",
+        "Fit K-means with a fixed seed.",
+        "Scale features using a pipeline and fit again.",
+        "Compare cluster sizes and inertia."
+      ],
+      "constraints": [
+        "Do not claim that lower inertia alone proves better clusters."
+      ],
+      "starter_code": "from sklearn.cluster import KMeans\\nfrom sklearn.preprocessing import StandardScaler\\nfrom sklearn.pipeline import make_pipeline\\n\\n# TODO: compare KMeans with and without scaling",
+      "evaluation": {
+        "criteria": [
+          "Fair comparison",
+          "Correct interpretation",
+          "Reproducibility"
+        ],
+        "metric": "Inertia plus qualitative analysis"
+      },
+      "hints": [
+        "K-means relies on distances.",
+        "Feature scales can dominate those distances."
+      ]
+    },
+    {
+      "id": "pa-008",
+      "title": "Detect Machine-Altered Text",
+      "difficulty": "Advanced",
+      "topic": "Natural Language Processing",
+      "estimated_minutes": 60,
+      "format": "notebook",
+      "prompt": "Build a text classifier to distinguish two labelled text conditions. Establish a simple baseline, avoid duplicate leakage, and report performance with an error analysis.",
+      "tasks": [
+        "Inspect label distribution and duplicate texts.",
+        "Create a split that avoids near-identical examples crossing partitions.",
+        "Build a TF-IDF plus linear classifier baseline.",
+        "Report precision, recall, F1, and representative errors."
+      ],
+      "constraints": [
+        "Use only the supplied labelled data.",
+        "Do not claim the model reliably detects AI-generated text in general from one dataset."
+      ],
+      "starter_code": "from sklearn.pipeline import make_pipeline\\nfrom sklearn.feature_extraction.text import TfidfVectorizer\\nfrom sklearn.linear_model import LogisticRegression\\n\\n# texts and labels should be loaded from a labelled dataset\\nmodel = make_pipeline(TfidfVectorizer(), LogisticRegression(max_iter=1000))\\n# TODO: split carefully, fit, evaluate",
+      "evaluation": {
+        "criteria": [
+          "Leakage-aware split",
+          "Baseline quality",
+          "Cautious claims",
+          "Error analysis"
+        ],
+        "metric": "Macro F1"
+      },
+      "hints": [
+        "Near duplicates can make test results look unrealistically strong.",
+        "Dataset-specific patterns may not generalize to other sources."
+      ]
+    },
+    {
+      "id": "pa-009",
+      "title": "Find a Useful Feature Set",
+      "difficulty": "Advanced",
+      "topic": "Feature Engineering",
+      "estimated_minutes": 50,
+      "format": "notebook",
+      "prompt": "Run a feature-ablation study to determine whether groups of features help or hurt validation performance. Keep all other choices fixed.",
+      "tasks": [
+        "Define a baseline feature set.",
+        "Remove one feature or group at a time.",
+        "Repeat with cross-validation.",
+        "Summarize average score and variability."
+      ],
+      "constraints": [
+        "Do not choose features using the test set.",
+        "Document all configurations."
+      ],
+      "starter_code": "from sklearn.model_selection import cross_validate\\n\\nfeature_groups = {}  # map names to feature columns\\n# TODO: evaluate each configuration using the same folds",
+      "evaluation": {
+        "criteria": [
+          "Controlled experiment",
+          "Valid cross-validation",
+          "Interpretation of variance"
+        ],
+        "metric": "Task-appropriate validation metric"
+      },
+      "hints": [
+        "A feature may help in combination with another feature.",
+        "Small score changes may be noise; report variability."
+      ]
+    },
+    {
+      "id": "pa-010",
+      "title": "Reconstruct an Audio Sequence",
+      "difficulty": "Advanced",
+      "topic": "Audio and Sequence Reasoning",
+      "estimated_minutes": 60,
+      "format": "notebook",
+      "prompt": "Given short audio segments and metadata, infer the most likely order of segments. Design a scoring method, test it on labelled examples, and analyze ambiguous cases.",
+      "tasks": [
+        "Inspect available metadata and audio features.",
+        "Build a simple similarity or classification baseline.",
+        "Evaluate ordering accuracy on held-out examples.",
+        "Inspect cases where the sequence is ambiguous."
+      ],
+      "constraints": [
+        "Do not use external data unless explicitly allowed.",
+        "Keep validation examples separate from tuning."
+      ],
+      "starter_code": "# Suggested starting point: inspect duration, energy, and available embeddings.\\n# TODO: define a pairwise compatibility score and sequence reconstruction method",
+      "evaluation": {
+        "criteria": [
+          "Baseline",
+          "Valid held-out evaluation",
+          "Ambiguity analysis"
+        ],
+        "metric": "Sequence-level accuracy"
+      },
+      "hints": [
+        "Start with a simple pairwise score before optimizing a complex sequence model.",
+        "Segment similarity alone may not uniquely determine order."
+      ]
+    },
+    {
+      "id": "pa-011",
+      "title": "Reason About Semantic Similarity",
+      "difficulty": "Advanced",
+      "topic": "Natural Language Processing",
+      "estimated_minutes": 45,
+      "format": "notebook",
+      "prompt": "Build a word or sentence similarity baseline and study where it fails. Compare a simple lexical method with an embedding-based method if an allowed embedding model is available.",
+      "tasks": [
+        "Define a small labelled similarity set.",
+        "Implement a lexical baseline.",
+        "Compare with a permitted embedding representation.",
+        "Inspect examples with similar surface form but different meaning."
+      ],
+      "constraints": [
+        "Document model and resource availability.",
+        "Do not equate embedding similarity with truth or synonymy."
+      ],
+      "starter_code": "from sklearn.feature_extraction.text import TfidfVectorizer\\nfrom sklearn.metrics.pairwise import cosine_similarity\\n\\n# TODO: vectorize text and compute pairwise similarities",
+      "evaluation": {
+        "criteria": [
+          "Baseline comparison",
+          "Careful interpretation",
+          "Error analysis"
+        ],
+        "metric": "Spearman correlation or ranking accuracy"
+      },
+      "hints": [
+        "Lexical overlap can fail on paraphrases.",
+        "Polysemy and context affect semantic similarity."
+      ]
+    },
+    {
+      "id": "pa-012",
+      "title": "Design a Competition-Ready Evaluation",
+      "difficulty": "Advanced",
+      "topic": "ML Systems",
+      "estimated_minutes": 45,
+      "format": "written-plus-code",
+      "prompt": "Create an evaluation plan for a new AI task. Specify a baseline, split strategy, metric, reproducibility controls, and checks against leakage or overfitting.",
+      "tasks": [
+        "Describe task type and target output.",
+        "Choose a baseline that can be implemented quickly.",
+        "Select a metric aligned with the task objective.",
+        "Write a reproducibility and leakage checklist."
+      ],
+      "constraints": [
+        "State assumptions and limitations.",
+        "Do not report hypothetical results as measured results."
+      ],
+      "starter_code": "# Complete the evaluation plan in Markdown or a notebook.\\n# Include data split, baseline, metric, random seed, and failure analysis.",
+      "evaluation": {
+        "criteria": [
+          "Metric-task alignment",
+          "Strong baseline",
+          "Leakage prevention",
+          "Reproducibility"
+        ],
+        "metric": "Rubric-based"
+      },
+      "hints": [
+        "A baseline helps determine whether a complex approach adds value.",
+        "The test set should be used sparingly for final evaluation."
+      ]
+    }
+  ],
+  "note": "These are original IOAI-style training problems created for IOAI Lab, not official IOAI contest statements. Add datasets and executable graders separately before enabling automated scoring."
+}
