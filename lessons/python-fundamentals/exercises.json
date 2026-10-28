@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0",
+  "lesson_id": "python-fundamentals",
+  "exercises": [
+    {
+      "id": "pyf-e001",
+      "title": "Score Summary",
+      "difficulty": "easy",
+      "type": "function_implementation",
+      "estimated_minutes": 10,
+      "description": "Write a function that receives a non-empty list of scores and returns the count, mean, minimum, and maximum.",
+      "requirements": [
+        "Create summarize_scores(scores).",
+        "Return a dictionary with keys count, mean, minimum, and maximum.",
+        "Raise ValueError if scores is empty.",
+        "Do not print from inside the function."
+      ],
+      "starter_code": "def summarize_scores(scores):\n    # TODO: reject an empty list\n    # TODO: calculate the summary\n    # TODO: return a dictionary\n    pass",
+      "hints": [
+        "Use len(scores) to calculate the number of values.",
+        "Use sum(scores) / len(scores) for the arithmetic mean.",
+        "Use min() and max() for the smallest and largest values."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "scores": [
+              70,
+              80,
+              90
+            ]
+          },
+          "expected": {
+            "count": 3,
+            "mean": 80,
+            "minimum": 70,
+            "maximum": 90
+          }
+        },
+        {
+          "input": {
+            "scores": [
+              5
+            ]
+          },
+          "expected": {
+            "count": 1,
+            "mean": 5,
+            "minimum": 5,
+            "maximum": 5
+          }
+        }
+      ],
+      "edge_cases": [
+        {
+          "input": {
+            "scores": []
+          },
+          "expected_behavior": "Raise ValueError"
+        }
+      ],
+      "learning_outcome": "Use functions and built-in aggregation operations to summarize numerical data."
+    },
+    {
+      "id": "pyf-e002",
+      "title": "Pass Counter",
+      "difficulty": "easy",
+      "type": "function_implementation",
+      "estimated_minutes": 10,
+      "description": "Count how many scores meet a minimum score threshold.",
+      "requirements": [
+        "Create count_at_least(scores, threshold).",
+        "Return an integer count.",
+        "Do not modify the input list.",
+        "Treat a score equal to the threshold as qualifying."
+      ],
+      "starter_code": "def count_at_least(scores, threshold):\n    # TODO: count qualifying scores\n    pass",
+      "hints": [
+        "Loop through each score.",
+        "Use >= rather than >.",
+        "You can use a counter or sum a generator of ones."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "scores": [
+              60,
+              75,
+              90,
+              75
+            ],
+            "threshold": 75
+          },
+          "expected": 3
+        },
+        {
+          "input": {
+            "scores": [
+              1,
+              2,
+              3
+            ],
+            "threshold": 5
+          },
+          "expected": 0
+        }
+      ],
+      "learning_outcome": "Use conditions and loops to count records matching a criterion."
+    },
+    {
+      "id": "pyf-e003",
+      "title": "Category Frequency",
+      "difficulty": "medium",
+      "type": "function_implementation",
+      "estimated_minutes": 15,
+      "description": "Build a frequency dictionary for a list of text labels.",
+      "requirements": [
+        "Create count_labels(labels).",
+        "Return a dictionary mapping each unique label to its count.",
+        "Preserve labels exactly as supplied; do not change capitalization.",
+        "Return an empty dictionary for an empty list."
+      ],
+      "starter_code": "def count_labels(labels):\n    counts = {}\n    # TODO: update counts for every label\n    return counts",
+      "hints": [
+        "Use counts.get(label, 0) to retrieve a label's current count.",
+        "Increase the count by one for each occurrence."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "labels": [
+              "healthy",
+              "diseased",
+              "healthy"
+            ]
+          },
+          "expected": {
+            "healthy": 2,
+            "diseased": 1
+          }
+        },
+        {
+          "input": {
+            "labels": []
+          },
+          "expected": {}
+        }
+      ],
+      "learning_outcome": "Use dictionaries to summarize categorical data."
+    },
+    {
+      "id": "pyf-e004",
+      "title": "Temperature Filter",
+      "difficulty": "medium",
+      "type": "function_implementation",
+      "estimated_minutes": 15,
+      "description": "Return all temperatures inside an inclusive interval.",
+      "requirements": [
+        "Create filter_temperatures(values, lower, upper).",
+        "Include a value when lower <= value <= upper.",
+        "Keep the original order.",
+        "Return a new list without modifying values.",
+        "Raise ValueError if lower is greater than upper."
+      ],
+      "starter_code": "def filter_temperatures(values, lower, upper):\n    # TODO: validate bounds\n    # TODO: return qualifying values in original order\n    pass",
+      "hints": [
+        "Use a list comprehension or a loop.",
+        "Both boundaries are inclusive.",
+        "Check the bounds before processing the values."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "values": [
+              20,
+              25,
+              30,
+              35
+            ],
+            "lower": 25,
+            "upper": 30
+          },
+          "expected": [
+            25,
+            30
+          ]
+        },
+        {
+          "input": {
+            "values": [
+              10,
+              15
+            ],
+            "lower": 20,
+            "upper": 30
+          },
+          "expected": []
+        }
+      ],
+      "learning_outcome": "Filter observations using conditions and preserve data ordering."
+    },
+    {
+      "id": "pyf-e005",
+      "title": "Mini Dataset Report",
+      "difficulty": "challenge",
+      "type": "small_project",
+      "estimated_minutes": 25,
+      "description": "Create a report from a list of student records, each represented by a dictionary containing name and score.",
+      "requirements": [
+        "Create build_report(records, threshold).",
+        "Return the number of records, mean score, highest-scoring student name, and number meeting the threshold.",
+        "Raise ValueError for an empty records list.",
+        "If multiple students share the highest score, return the name of the first such student.",
+        "Assume every record contains a name and a numerical score."
+      ],
+      "starter_code": "def build_report(records, threshold):\n    # TODO: validate records\n    # TODO: calculate summary statistics\n    # TODO: find the first highest-scoring student\n    # TODO: return the report dictionary\n    pass",
+      "hints": [
+        "Extract scores into a separate list.",
+        "Use max(scores) to find the highest score.",
+        "Search the records in their original order to find the first matching student."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "records": [
+              {
+                "name": "Asha",
+                "score": 80
+              },
+              {
+                "name": "Kabir",
+                "score": 95
+              },
+              {
+                "name": "Meera",
+                "score": 95
+              }
+            ],
+            "threshold": 90
+          },
+          "expected": {
+            "count": 3,
+            "mean": 90,
+            "top_student": "Kabir",
+            "at_least_threshold": 2
+          }
+        }
+      ],
+      "learning_outcome": "Combine lists, dictionaries, functions, loops, and summary statistics in a small data-processing task."
+    }
+  ]
+}
