@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "section": "experiments",
+  "description": "Guided, reproducible experiments for learning how modelling choices affect results. Results should be produced by the app or notebook, not prefilled as measured facts.",
+  "experiments": [
+    {
+      "id": "baseline-vs-complex",
+      "title": "Baseline vs. Complex Model",
+      "category": "Model Selection",
+      "level": "Beginner",
+      "question": "Does a more complex model outperform a simple baseline on unseen data?",
+      "dataset": "Synthetic regression dataset",
+      "variables": {
+        "independent": [
+          "model_type"
+        ],
+        "dependent": [
+          "test_MAE",
+          "train_MAE"
+        ],
+        "controlled": [
+          "train_test_split",
+          "random_seed",
+          "features"
+        ]
+      },
+      "procedure": [
+        "Create a fixed train/test split.",
+        "Train a mean-prediction baseline.",
+        "Train linear regression and a decision tree.",
+        "Compare train and test MAE."
+      ],
+      "metrics": [
+        "train_MAE",
+        "test_MAE"
+      ],
+      "expected_learning": "A complex model may fit training data better but generalize worse.",
+      "deliverable": "Comparison table and a two-sentence conclusion."
+    },
+    {
+      "id": "learning-rate-sweep",
+      "title": "Learning Rate Sweep",
+      "category": "Optimization",
+      "level": "Intermediate",
+      "question": "How does the learning rate affect convergence speed and stability?",
+      "dataset": "Small synthetic classification dataset",
+      "variables": {
+        "independent": [
+          "learning_rate"
+        ],
+        "dependent": [
+          "final_loss",
+          "steps_to_threshold"
+        ],
+        "controlled": [
+          "architecture",
+          "seed",
+          "batch_size"
+        ]
+      },
+      "procedure": [
+        "Choose at least four learning rates.",
+        "Use the same model initialization and data split.",
+        "Record the loss after each epoch.",
+        "Plot learning rate against final loss and convergence behaviour."
+      ],
+      "metrics": [
+        "final_loss",
+        "steps_to_threshold"
+      ],
+      "expected_learning": "Very low rates can converge slowly; high rates may oscillate or diverge.",
+      "deliverable": "Loss plot and a justified learning-rate choice."
+    },
+    {
+      "id": "feature-ablation",
+      "title": "Feature Ablation Study",
+      "category": "Feature Engineering",
+      "level": "Intermediate",
+      "question": "Which input features contribute useful predictive signal?",
+      "dataset": "Tabular regression or classification dataset",
+      "variables": {
+        "independent": [
+          "feature_group"
+        ],
+        "dependent": [
+          "validation_score"
+        ],
+        "controlled": [
+          "model_family",
+          "split",
+          "preprocessing"
+        ]
+      },
+      "procedure": [
+        "Train a model with all permitted features.",
+        "Remove one feature group at a time.",
+        "Repeat each configuration with fixed folds.",
+        "Compare validation scores and variability."
+      ],
+      "metrics": [
+        "MAE or F1",
+        "score_standard_deviation"
+      ],
+      "expected_learning": "A feature can be redundant, noisy, or useful only in combination with other features.",
+      "deliverable": "Ranked ablation table with caveats."
+    },
+    {
+      "id": "regularization-sweep",
+      "title": "Regularization and Generalization",
+      "category": "Model Selection",
+      "level": "Intermediate",
+      "question": "How does regularization strength change training and validation performance?",
+      "dataset": "Synthetic regression dataset",
+      "variables": {
+        "independent": [
+          "alpha"
+        ],
+        "dependent": [
+          "train_MAE",
+          "validation_MAE"
+        ],
+        "controlled": [
+          "features",
+          "split",
+          "model_family"
+        ]
+      },
+      "procedure": [
+        "Fit a model with weak regularization.",
+        "Evaluate a logarithmic range of alpha values.",
+        "Plot train and validation error.",
+        "Choose a value using validation data only."
+      ],
+      "metrics": [
+        "train_MAE",
+        "validation_MAE"
+      ],
+      "expected_learning": "Stronger regularization can reduce overfitting but may eventually cause underfitting.",
+      "deliverable": "Error curve and selected alpha with rationale."
+    },
+    {
+      "id": "class-imbalance",
+      "title": "Accuracy Under Class Imbalance",
+      "category": "Evaluation",
+      "level": "Intermediate",
+      "question": "Can accuracy hide poor performance on a rare class?",
+      "dataset": "Synthetic imbalanced binary classification dataset",
+      "variables": {
+        "independent": [
+          "minority_class_fraction"
+        ],
+        "dependent": [
+          "accuracy",
+          "precision",
+          "recall",
+          "F1"
+        ],
+        "controlled": [
+          "model",
+          "threshold",
+          "random_seed"
+        ]
+      },
+      "procedure": [
+        "Generate datasets with different minority-class fractions.",
+        "Train the same baseline model.",
+        "Evaluate all four metrics.",
+        "Inspect the confusion matrix at each class balance."
+      ],
+      "metrics": [
+        "accuracy",
+        "precision",
+        "recall",
+        "F1",
+        "confusion_matrix"
+      ],
+      "expected_learning": "Accuracy can remain high while minority-class recall is poor.",
+      "deliverable": "Metric comparison and recommendation for a suitable metric."
+    },
+    {
+      "id": "threshold-tradeoff",
+      "title": "Classification Threshold Trade-off",
+      "category": "Evaluation",
+      "level": "Intermediate",
+      "question": "How does changing a probability threshold affect precision and recall?",
+      "dataset": "Binary classification dataset with predicted probabilities",
+      "variables": {
+        "independent": [
+          "threshold"
+        ],
+        "dependent": [
+          "precision",
+          "recall",
+          "F1"
+        ],
+        "controlled": [
+          "trained_model",
+          "test_set"
+        ]
+      },
+      "procedure": [
+        "Train one classifier and preserve its test probabilities.",
+        "Evaluate thresholds from 0.1 to 0.9.",
+        "Plot precision and recall against the threshold.",
+        "Choose a threshold for a stated error-cost scenario."
+      ],
+      "metrics": [
+        "precision",
+        "recall",
+        "F1"
+      ],
+      "expected_learning": "Threshold selection changes error trade-offs without retraining the model.",
+      "deliverable": "Threshold plot and a decision linked to the use case."
+    }
+  ],
+  "record_schema": {
+    "fields": [
+      "experiment_id",
+      "run_name",
+      "dataset_version",
+      "model_configuration",
+      "random_seed",
+      "metrics",
+      "notes",
+      "artifact_links"
+    ],
+    "rule": "Record actual run outputs; do not fabricate metric values."
+  }
+}
