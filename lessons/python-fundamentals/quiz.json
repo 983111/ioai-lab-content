@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.0",
+  "lesson_id": "python-fundamentals",
+  "title": "Python Fundamentals Quiz",
+  "difficulty": "beginner",
+  "passing_score_percent": 70,
+  "questions": [
+    {
+      "id": "pyf-q001",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "What is printed by print(10 // 3)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "3",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "3.333...",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "30",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The // operator performs floor division. For positive numbers, 10 // 3 is 3.",
+      "tags": [
+        "operators"
+      ]
+    },
+    {
+      "id": "pyf-q002",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "What is the first valid index of values = [12, 20, 35]?",
+      "options": [
+        {
+          "id": "A",
+          "text": "1",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "-1",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "0",
+          "is_correct": true
+        },
+        {
+          "id": "D",
+          "text": "3",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Python list indexing starts at 0, so values[0] is 12.",
+      "tags": [
+        "lists",
+        "indexing"
+      ]
+    },
+    {
+      "id": "pyf-q003",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "Which Python structure is best suited to map student IDs to scores?",
+      "options": [
+        {
+          "id": "A",
+          "text": "A dictionary",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "A single Boolean value",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "A numeric scalar",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "A single string",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A dictionary stores key-value pairs, making it suitable for mapping IDs to scores.",
+      "tags": [
+        "dictionaries"
+      ]
+    },
+    {
+      "id": "pyf-q004",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "What does return do inside a function?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Repeats the function forever",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "Sends a result back to the caller",
+          "is_correct": true
+        },
+        {
+          "id": "C",
+          "text": "Automatically prints every variable",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "Changes every local variable into a global variable",
+          "is_correct": false
+        }
+      ],
+      "explanation": "return ends the current function call and supplies its result to the calling code.",
+      "tags": [
+        "functions"
+      ]
+    },
+    {
+      "id": "pyf-q005",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "What is the output of [x * 2 for x in [2, 4, 6] if x > 2]?",
+      "options": [
+        {
+          "id": "A",
+          "text": "[4, 8, 12]",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "[8, 12]",
+          "is_correct": true
+        },
+        {
+          "id": "C",
+          "text": "[2, 4, 6]",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "[4, 6]",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The condition excludes 2. The remaining values, 4 and 6, are multiplied by 2.",
+      "tags": [
+        "comprehensions",
+        "conditions"
+      ]
+    },
+    {
+      "id": "pyf-q006",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "A list contains [70, 80, 90]. What is sum(scores) / len(scores)?",
+      "options": [
+        {
+          "id": "A",
+          "text": "80.0",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "240.0",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "90.0",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "70.0",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The sum is 240 and the list length is 3. Dividing 240 by 3 gives 80.0.",
+      "tags": [
+        "aggregation",
+        "functions"
+      ]
+    },
+    {
+      "id": "pyf-q007",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "Which error is raised when code attempts to access scores[5] in scores = [70, 80]?",
+      "options": [
+        {
+          "id": "A",
+          "text": "KeyError",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "IndexError",
+          "is_correct": true
+        },
+        {
+          "id": "C",
+          "text": "NameError",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "ZeroDivisionError",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The list has valid indexes 0 and 1. Index 5 is outside its range, causing IndexError.",
+      "tags": [
+        "debugging",
+        "lists"
+      ]
+    },
+    {
+      "id": "pyf-q008",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "What does counts.get('healthy', 0) return if the key is absent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "None only",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "An error in every case",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "0",
+          "is_correct": true
+        },
+        {
+          "id": "D",
+          "text": "The string 'healthy'",
+          "is_correct": false
+        }
+      ],
+      "explanation": "dict.get(key, default) returns the supplied default when the key is absent.",
+      "tags": [
+        "dictionaries"
+      ]
+    },
+    {
+      "id": "pyf-q009",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "Which expression counts values greater than or equal to 75 in scores = [72, 85, 91, 68]?",
+      "options": [
+        {
+          "id": "A",
+          "text": "sum(1 for x in scores if x >= 75)",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "sum(scores >= 75)",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "len(scores >= 75)",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "max(scores >= 75)",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The generator yields 1 for each qualifying score, and sum counts those yielded values.",
+      "tags": [
+        "loops",
+        "aggregation"
+      ]
+    },
+    {
+      "id": "pyf-q010",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "Why should a function that calculates a mean check for an empty list?",
+      "options": [
+        {
+          "id": "A",
+          "text": "An empty list always has a mean of 1",
+          "is_correct": false
+        },
+        {
+          "id": "B",
+          "text": "The count is zero, so the calculation would divide by zero",
+          "is_correct": true
+        },
+        {
+          "id": "C",
+          "text": "Python cannot store an empty list",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "The sum function only accepts strings",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The arithmetic mean divides the sum by the number of observations. For an empty list, the count is zero and the mean is undefined.",
+      "tags": [
+        "edge-cases",
+        "functions"
+      ]
+    }
+  ]
+}
