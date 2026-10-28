@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "competition": "International Olympiad in Artificial Intelligence",
+  "source_type": "official_archive_index",
+  "official_repository": "https://github.com/IOAI-official/IOAI-2026",
+  "licence": "CC BY 4.0 (as stated by official repository)",
+  "rounds": [
+    {
+      "id": "at-home",
+      "name": "At-Home Round",
+      "source_url": "https://github.com/IOAI-official/IOAI-2026/tree/main/At-Home-Round",
+      "task_count": 3,
+      "tasks": [
+        {
+          "id": "operation-night-watch",
+          "title": "Operation Night Watch",
+          "number": 1
+        },
+        {
+          "id": "robot-delivery-academy",
+          "title": "Robot Delivery Academy",
+          "number": 2
+        },
+        {
+          "id": "analytical-language-john-wilkins",
+          "title": "The Analytical Language of John Wilkins",
+          "number": 3
+        }
+      ]
+    },
+    {
+      "id": "individual-contest",
+      "name": "Individual Contest",
+      "source_url": "https://github.com/IOAI-official/IOAI-2026/tree/main/Individual-Contest",
+      "task_count": 6,
+      "tasks": [
+        {
+          "id": "find-the-order",
+          "title": "Find the Order",
+          "number": 1,
+          "day": 1,
+          "area": [
+            "Audio",
+            "Sequence Reconstruction"
+          ],
+          "summary": "Reconstruct speaker-turn order from shuffled audio segments."
+        },
+        {
+          "id": "robot-chasing",
+          "title": "Robot Chasing",
+          "number": 2,
+          "day": 1,
+          "area": [
+            "Natural Language Processing",
+            "Gridworlds"
+          ],
+          "summary": "Predict robot behaviour described by natural-language instructions."
+        },
+        {
+          "id": "potato",
+          "title": "Potato",
+          "number": 3,
+          "day": 1,
+          "area": [
+            "NLP",
+            "Semantic Similarity"
+          ],
+          "summary": "Guess a hidden word using pairwise semantic-closeness feedback."
+        },
+        {
+          "id": "double-agent-dilemma",
+          "title": "Double Agent Dilemma",
+          "number": 4,
+          "day": 2,
+          "area": [
+            "Computer Vision",
+            "Model Analysis"
+          ],
+          "summary": "Exploit informative disagreements between image classifiers."
+        },
+        {
+          "id": "ghost-of-the-machine",
+          "title": "Ghost of the Machine",
+          "number": 5,
+          "day": 2,
+          "area": [
+            "NLP",
+            "Text Anomaly Detection"
+          ],
+          "summary": "Locate machine-altered passages in a text archive."
+        },
+        {
+          "id": "ioai-field",
+          "title": "IOAI Field",
+          "number": 6,
+          "day": 2,
+          "area": [
+            "Generative Models",
+            "Computer Vision"
+          ],
+          "summary": "Train a generator from scratch to represent the IOAI logo as a spatial function."
+        }
+      ]
+    },
+    {
+      "id": "gaite",
+      "name": "GAITE Contest",
+      "source_url": "https://github.com/IOAI-official/IOAI-2026/tree/main/GAITE-Contest",
+      "task_count": 6,
+      "summary": "Same six Individual Contest tasks, with additional hints and a separate ranking."
+    }
+  ],
+  "environment": "The official README describes one fresh notebook environment per on-site task, one GPU with approximately 16 GB VRAM, no internet access, and 5 GB storage.",
+  "notes": "The official repository contains full English statements, PDFs, figures, translations, and credits. Use the official files for complete requirements and evaluation details."
+}
