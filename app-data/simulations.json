@@ -1,0 +1,246 @@
+{
+  "schema_version": 1,
+  "section": "simulations",
+  "description": "Interactive, browser-friendly simulations. Parameters and outcomes are teaching approximations, not substitutes for running a real training job.",
+  "simulations": [
+    {
+      "id": "gradient-descent",
+      "title": "Gradient Descent",
+      "category": "Optimization",
+      "level": "Beginner",
+      "description": "Adjust the learning rate and starting point to see how gradient descent approaches a minimum.",
+      "concepts": [
+        "loss function",
+        "gradient",
+        "learning rate",
+        "convergence"
+      ],
+      "controls": [
+        {
+          "id": "learning_rate",
+          "label": "Learning rate",
+          "type": "slider",
+          "min": 0.01,
+          "max": 1,
+          "step": 0.01,
+          "default": 0.1
+        },
+        {
+          "id": "start_x",
+          "label": "Starting point",
+          "type": "slider",
+          "min": -5,
+          "max": 5,
+          "step": 0.5,
+          "default": 4
+        },
+        {
+          "id": "steps",
+          "label": "Update steps",
+          "type": "slider",
+          "min": 1,
+          "max": 50,
+          "step": 1,
+          "default": 20
+        }
+      ],
+      "model": {
+        "function": "f(x) = x²",
+        "gradient": "df/dx = 2x",
+        "update": "x_next = x - learning_rate * 2x"
+      },
+      "visualization": {
+        "type": "line-and-points",
+        "x_domain": [
+          -5,
+          5
+        ],
+        "function": "x^2",
+        "show_path": true
+      },
+      "outcomes": [
+        "A very small learning rate moves slowly",
+        "A suitable learning rate approaches the minimum",
+        "A large learning rate can overshoot or diverge"
+      ],
+      "challenge": "Find a learning rate that reaches a value close to zero in fewer than 20 steps."
+    },
+    {
+      "id": "decision-boundaries",
+      "title": "Decision Boundaries",
+      "category": "Classification",
+      "level": "Beginner",
+      "description": "Move two feature dimensions and compare a linear boundary with a nonlinear pattern.",
+      "concepts": [
+        "features",
+        "classification",
+        "linear separation",
+        "overfitting"
+      ],
+      "controls": [
+        {
+          "id": "noise",
+          "label": "Label noise",
+          "type": "slider",
+          "min": 0,
+          "max": 0.4,
+          "step": 0.02,
+          "default": 0.08
+        },
+        {
+          "id": "complexity",
+          "label": "Boundary complexity",
+          "type": "segmented",
+          "options": [
+            "Linear",
+            "Moderate",
+            "Complex"
+          ],
+          "default": "Linear"
+        },
+        {
+          "id": "samples",
+          "label": "Number of samples",
+          "type": "slider",
+          "min": 50,
+          "max": 500,
+          "step": 50,
+          "default": 200
+        }
+      ],
+      "data": {
+        "generator": "two_moons",
+        "random_seed": 42
+      },
+      "visualization": {
+        "type": "scatter-and-boundary",
+        "features": [
+          "x1",
+          "x2"
+        ],
+        "class_count": 2
+      },
+      "outcomes": [
+        "More noise makes classes harder to separate",
+        "Complex boundaries can fit noise",
+        "More samples may improve the stability of the boundary"
+      ],
+      "challenge": "Compare a simple boundary with a complex one when label noise is high."
+    },
+    {
+      "id": "neural-network-training",
+      "title": "Neural Network Training",
+      "category": "Deep Learning",
+      "level": "Intermediate",
+      "description": "Explore how hidden units, learning rate, and training steps affect a small network's learning curve.",
+      "concepts": [
+        "epochs",
+        "loss",
+        "hidden units",
+        "generalization"
+      ],
+      "controls": [
+        {
+          "id": "hidden_units",
+          "label": "Hidden units",
+          "type": "slider",
+          "min": 2,
+          "max": 32,
+          "step": 2,
+          "default": 8
+        },
+        {
+          "id": "learning_rate",
+          "label": "Learning rate",
+          "type": "slider",
+          "min": 0.001,
+          "max": 0.2,
+          "step": 0.001,
+          "default": 0.03
+        },
+        {
+          "id": "epochs",
+          "label": "Training steps",
+          "type": "slider",
+          "min": 10,
+          "max": 200,
+          "step": 10,
+          "default": 100
+        }
+      ],
+      "data": {
+        "generator": "noisy_two_moons",
+        "random_seed": 7
+      },
+      "visualization": {
+        "type": "training-curves",
+        "series": [
+          "training_loss",
+          "validation_loss"
+        ]
+      },
+      "outcomes": [
+        "Training loss can fall while validation loss rises",
+        "Too few units can underfit",
+        "More capacity does not guarantee better generalization"
+      ],
+      "challenge": "Find a configuration where training loss is low without a large validation-loss gap."
+    },
+    {
+      "id": "clustering",
+      "title": "Clustering and K-Means",
+      "category": "Unsupervised Learning",
+      "level": "Beginner",
+      "description": "Change the number of clusters and inspect how K-means partitions generated points.",
+      "concepts": [
+        "unsupervised learning",
+        "centroids",
+        "inertia",
+        "scaling"
+      ],
+      "controls": [
+        {
+          "id": "k",
+          "label": "Number of clusters (k)",
+          "type": "slider",
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "default": 3
+        },
+        {
+          "id": "spread",
+          "label": "Cluster spread",
+          "type": "slider",
+          "min": 0.2,
+          "max": 2,
+          "step": 0.1,
+          "default": 0.7
+        },
+        {
+          "id": "scale_y",
+          "label": "Vertical feature scale",
+          "type": "slider",
+          "min": 0.5,
+          "max": 3,
+          "step": 0.1,
+          "default": 1
+        }
+      ],
+      "data": {
+        "generator": "blobs",
+        "random_seed": 21
+      },
+      "visualization": {
+        "type": "cluster-scatter",
+        "show_centroids": true
+      },
+      "outcomes": [
+        "Changing k changes the partition",
+        "Feature scaling can change distance-based assignments",
+        "Lower inertia alone does not prove that clusters are meaningful"
+      ],
+      "challenge": "Compare the same points before and after scaling one feature."
+    }
+  ]
+}
