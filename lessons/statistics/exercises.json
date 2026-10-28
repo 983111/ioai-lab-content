@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "lesson_id": "statistics",
+  "exercises": [
+    {
+      "id": "statistics-e001",
+      "title": "Implement the Core Operation",
+      "difficulty": "easy",
+      "type": "function_implementation",
+      "estimated_minutes": 15,
+      "description": "Implement a reusable function that applies the central idea from statistics for machine learning.",
+      "requirements": [
+        "Use a clearly named function.",
+        "Validate empty or invalid input where relevant.",
+        "Return a result rather than printing from the function.",
+        "Do not modify caller-owned input unless the task explicitly requires it."
+      ],
+      "starter_code": "def solve(data):\n    # TODO: validate the input\n    # TODO: implement the core operation\n    pass",
+      "hints": [
+        "Work through one small example by hand first.",
+        "Break the task into input validation, computation, and return value.",
+        "Test both normal and edge cases."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "data": [
+              1,
+              2,
+              3
+            ]
+          },
+          "expected_behavior": "Return a correct result for a simple non-empty input"
+        },
+        {
+          "input": {
+            "data": []
+          },
+          "expected_behavior": "Handle empty input according to a documented rule"
+        }
+      ],
+      "learning_outcome": "Turn a concept into a reusable, testable function."
+    },
+    {
+      "id": "statistics-e002",
+      "title": "Inspect and Explain Results",
+      "difficulty": "medium",
+      "type": "analysis",
+      "estimated_minutes": 20,
+      "description": "Use a small dataset to produce a result and write a short interpretation.",
+      "requirements": [
+        "State the shape and types of the input.",
+        "Calculate or report at least two relevant summaries or metrics.",
+        "Explain what the result means and one limitation.",
+        "Use reproducible code."
+      ],
+      "starter_code": "# TODO: create or load a small dataset\n# TODO: inspect its shape, types, and basic properties\n# TODO: compute relevant summaries\n# TODO: write a 2-3 sentence interpretation",
+      "hints": [
+        "Do not interpret an output before checking its inputs.",
+        "Keep observations separate from assumptions.",
+        "Consider whether an unusual value changes the summary."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "dataset": "small reproducible example"
+          },
+          "expected_behavior": "Code runs and produces documented summaries"
+        }
+      ],
+      "learning_outcome": "Connect computational output to a careful explanation."
+    },
+    {
+      "id": "statistics-e003",
+      "title": "Mini-project: Reproducible Workflow",
+      "difficulty": "challenge",
+      "type": "small_project",
+      "estimated_minutes": 35,
+      "description": "Build a small end-to-end workflow using the concepts from statistics for machine learning.",
+      "requirements": [
+        "Use a deterministic or documented dataset.",
+        "Separate data preparation from the main computation.",
+        "Check at least one edge case or failure mode.",
+        "Print or return a concise result summary.",
+        "Write one limitation and one next experiment."
+      ],
+      "starter_code": "def run_workflow(data):\n    # TODO: validate and inspect data\n    # TODO: prepare data without leaking evaluation information\n    # TODO: run the main analysis\n    # TODO: return results and relevant metadata\n    pass",
+      "hints": [
+        "Start with a baseline or simple summary.",
+        "Keep transformations reproducible.",
+        "Use a small test before scaling up."
+      ],
+      "test_cases": [
+        {
+          "input": {
+            "data": "small deterministic sample"
+          },
+          "expected_behavior": "Workflow completes, returns a result, and documents its assumptions"
+        }
+      ],
+      "learning_outcome": "Combine lesson skills into an interpretable, reproducible workflow."
+    }
+  ]
+}
