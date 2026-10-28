@@ -1,0 +1,551 @@
+{
+  "syllabus_id": "ioai-2026",
+  "title": "IOAI 2026 Syllabus",
+  "organization": "International Olympiad in Artificial Intelligence",
+  "year": 2026,
+  "version": "2026",
+  "status": "official_source_provided",
+  "description": "The International Olympiad in Artificial Intelligence is a global competition for high school students aiming to cultivate theoretical foundations and practical expertise in Artificial Intelligence. The syllabus is updated annually by the International Scientific Committee.",
+  "source": {
+    "title": "IOAI 2026 Syllabus",
+    "url": "https://ioai-official.org/",
+    "education_hub_url": "https://ioai-official.org/resources/",
+    "contact_email": "isc@ioai-official.org",
+    "provided_by": "user",
+    "verified_against_live_source": false
+  },
+  "classification_definitions": {
+    "Theory": "Understand core concepts and theoretical underpinnings of how AI methods work. Breadth should be prioritized over depth.",
+    "Practice": "Develop practical skills to implement AI methods, use library functions, apply methods to data, and interpret outputs.",
+    "Both": "Understand theoretical principles and practical application."
+  },
+  "scope_note": "Topics not listed are considered excluded from the syllabus. Data may include text, tabular data, images, audio, video, and time-series data.",
+  "sections": [
+    {
+      "id": "foundational-skills-classical-ml",
+      "number": 1,
+      "title": "Foundational Skills & Classical Machine Learning",
+      "topics": [
+        {
+          "id": "programming-fundamentals",
+          "name": "Programming Fundamentals",
+          "subtopics": [
+            {
+              "id": "python-basics",
+              "name": "Python Basics (Loops, Functions, etc.)",
+              "category": "Practice"
+            },
+            {
+              "id": "numpy-pandas",
+              "name": "NumPy and Pandas for Data Handling",
+              "category": "Practice"
+            },
+            {
+              "id": "visualization",
+              "name": "Matplotlib and Seaborn for Visualization",
+              "category": "Practice"
+            },
+            {
+              "id": "scikit-learn",
+              "name": "Scikit-learn for ML",
+              "category": "Practice"
+            },
+            {
+              "id": "pytorch-basics",
+              "name": "PyTorch Basics",
+              "category": "Practice"
+            },
+            {
+              "id": "tensor-manipulation",
+              "name": "Tensor (Multi-dimensional Array) Manipulation",
+              "category": "Practice"
+            },
+            {
+              "id": "cpu-gpu-training",
+              "name": "Training Models on CPU and GPU",
+              "category": "Practice"
+            }
+          ]
+        },
+        {
+          "id": "supervised-learning",
+          "name": "Supervised Learning",
+          "subtopics": [
+            {
+              "id": "linear-regression",
+              "name": "Linear Regression",
+              "category": "Both"
+            },
+            {
+              "id": "logistic-regression",
+              "name": "Logistic Regression",
+              "category": "Both"
+            },
+            {
+              "id": "l1-l2-regularization",
+              "name": "L1 & L2 Regularization",
+              "category": "Both"
+            },
+            {
+              "id": "knn",
+              "name": "K-Nearest Neighbors (K-NN)",
+              "category": "Both"
+            },
+            {
+              "id": "decision-trees",
+              "name": "Decision Trees",
+              "category": "Both"
+            },
+            {
+              "id": "model-ensembles",
+              "name": "Model Ensembles (Gradient Boosting, Bagging, Random Forest)",
+              "category": "Practice"
+            },
+            {
+              "id": "svm",
+              "name": "Support Vector Machines (SVM)",
+              "category": "Both"
+            }
+          ]
+        },
+        {
+          "id": "unsupervised-learning",
+          "name": "Unsupervised Learning",
+          "subtopics": [
+            {
+              "id": "k-means",
+              "name": "K-Means Clustering",
+              "category": "Both"
+            },
+            {
+              "id": "pca",
+              "name": "Principal Component Analysis (PCA)",
+              "category": "Both"
+            },
+            {
+              "id": "tsne-umap",
+              "name": "t-SNE, UMAP",
+              "category": "Practice"
+            },
+            {
+              "id": "advanced-clustering",
+              "name": "DBSCAN, Hierarchical & Spectral Clustering",
+              "category": "Practice"
+            }
+          ]
+        },
+        {
+          "id": "data-science-fundamentals",
+          "name": "Data Science Fundamentals",
+          "subtopics": [
+            {
+              "id": "model-evaluation-metrics",
+              "name": "Model Evaluation Metrics (Accuracy, Precision, Recall, F1-Score, etc.)",
+              "category": "Both"
+            },
+            {
+              "id": "underfitting-overfitting",
+              "name": "Underfitting, Overfitting",
+              "category": "Theory"
+            },
+            {
+              "id": "hyperparameter-tuning",
+              "name": "Hyperparameter Tuning",
+              "category": "Practice"
+            },
+            {
+              "id": "cross-validation",
+              "name": "Cross-Validation",
+              "category": "Practice"
+            },
+            {
+              "id": "confusion-matrix-roc",
+              "name": "Confusion Matrix and ROC Curves",
+              "category": "Both"
+            },
+            {
+              "id": "feature-engineering",
+              "name": "Feature Engineering",
+              "category": "Practice",
+              "notes": "Transform raw, potentially high-dimensional, categorical, time-series, or ragged data into a compact set of informative features.",
+              "techniques": [
+                "Sliding windows",
+                "Pooling operations",
+                "One-hot encoding",
+                "Statistical moment-based features such as average and standard deviation",
+                "PCA",
+                "Neural-network-based embeddings"
+              ]
+            },
+            {
+              "id": "data-processing",
+              "name": "Data Processing",
+              "category": "Practice",
+              "notes": "Handle missing and irregular data, including sequence modeling scenarios.",
+              "techniques": [
+                "Mean imputation",
+                "Median imputation",
+                "Forward-fill for sequences",
+                "Padding variable-length sequences",
+                "Normalization",
+                "Standardization",
+                "Train, validation, and test splitting",
+                "Basic data augmentation including flipping, cropping, and noise addition",
+                "Tokenization and vocabulary building for text and audio",
+                "Patching for images"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neural-networks-deep-learning",
+      "number": 2,
+      "title": "Neural Networks & Deep Learning",
+      "topics": [
+        {
+          "id": "neural-networks",
+          "name": "Neural Networks",
+          "subtopics": [
+            {
+              "id": "perceptron",
+              "name": "Perceptron Basics",
+              "category": "Both"
+            },
+            {
+              "id": "gradient-descent",
+              "name": "Gradient Descent",
+              "category": "Both"
+            },
+            {
+              "id": "backpropagation",
+              "name": "Backpropagation",
+              "category": "Both"
+            },
+            {
+              "id": "activation-functions",
+              "name": "Activation Functions (ReLU, Sigmoid, Tanh)",
+              "category": "Both"
+            },
+            {
+              "id": "loss-functions",
+              "name": "Loss Functions (MSE, MAE, Cross Entropy, etc.)",
+              "category": "Both"
+            }
+          ]
+        },
+        {
+          "id": "deep-learning",
+          "name": "Deep Learning",
+          "subtopics": [
+            {
+              "id": "mlp",
+              "name": "Multi-Layer Perceptrons (MLP)",
+              "category": "Both"
+            },
+            {
+              "id": "data-embeddings",
+              "name": "Data Embeddings (text, image, audio)",
+              "category": "Both"
+            },
+            {
+              "id": "pooling-techniques",
+              "name": "Pooling Techniques (Max, Average)",
+              "category": "Both"
+            },
+            {
+              "id": "attention-mechanism",
+              "name": "Attention Mechanism",
+              "category": "Both"
+            },
+            {
+              "id": "transformers",
+              "name": "Transformers (theory needed only for text and image)",
+              "category": "Both"
+            },
+            {
+              "id": "autoencoders",
+              "name": "Autoencoders",
+              "category": "Practice"
+            },
+            {
+              "id": "sgd-mini-batch",
+              "name": "SGD, Mini-Batch Gradient Descent",
+              "category": "Both"
+            },
+            {
+              "id": "momentum-methods",
+              "name": "Momentum Methods (Adam, AdamW)",
+              "category": "Practice"
+            },
+            {
+              "id": "convergence-learning-rates",
+              "name": "Convergence and Learning Rates",
+              "category": "Practice"
+            },
+            {
+              "id": "deep-learning-regularization",
+              "name": "Regularization: Dropout, Early Stopping, Weight Decay",
+              "category": "Practice"
+            },
+            {
+              "id": "weight-initialization",
+              "name": "Weight Initialization",
+              "category": "Practice"
+            },
+            {
+              "id": "batch-normalization",
+              "name": "Batch Normalization",
+              "category": "Practice"
+            },
+            {
+              "id": "model-finetuning",
+              "name": "Model Finetuning (full and parameter-efficient)",
+              "category": "Practice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "number": 3,
+      "title": "Computer Vision",
+      "topics": [
+        {
+          "id": "computer-vision-fundamentals",
+          "name": "Fundamentals",
+          "subtopics": [
+            {
+              "id": "convolutional-layers",
+              "name": "Convolutional Layers",
+              "category": "Both"
+            },
+            {
+              "id": "image-classification",
+              "name": "Image Classification",
+              "category": "Practice"
+            },
+            {
+              "id": "object-detection",
+              "name": "Object Detection (YOLO, SSD, DERT)",
+              "category": "Practice"
+            },
+            {
+              "id": "image-segmentation",
+              "name": "Image Segmentation (U-Net)",
+              "category": "Practice"
+            },
+            {
+              "id": "pretrained-vision-encoders",
+              "name": "Pre-trained Vision Encoders (e.g. ResNet)",
+              "category": "Practice"
+            },
+            {
+              "id": "image-augmentation",
+              "name": "Image Augmentation",
+              "category": "Practice"
+            },
+            {
+              "id": "gan-image-generation",
+              "name": "Generating Images with GANs",
+              "category": "Practice"
+            },
+            {
+              "id": "self-supervised-vision",
+              "name": "Self-Supervised Learning for Vision",
+              "category": "Practice"
+            },
+            {
+              "id": "vision-text-encoders",
+              "name": "Vision-text encoders (e.g. CLIP)",
+              "category": "Practice"
+            },
+            {
+              "id": "diffusion-models",
+              "name": "Diffusion Models",
+              "category": "Practice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nlp-audio",
+      "number": 4,
+      "title": "Natural Language Processing & Audio",
+      "topics": [
+        {
+          "id": "nlp",
+          "name": "NLP",
+          "subtopics": [
+            {
+              "id": "text-classification",
+              "name": "Text Classification",
+              "category": "Practice"
+            },
+            {
+              "id": "pretrained-text-encoders",
+              "name": "Pre-trained Text Encoders (e.g. BERT)",
+              "category": "Both"
+            },
+            {
+              "id": "language-modeling",
+              "name": "Language Modeling",
+              "category": "Both"
+            },
+            {
+              "id": "encoder-decoder-models",
+              "name": "Encoder-Decoder Models (e.g. for Machine Translation or Vision-Language Modeling)",
+              "category": "Practice"
+            },
+            {
+              "id": "pretrained-language-models",
+              "name": "Pre-trained Language Models (open-source and API-based ones)",
+              "category": "Practice"
+            }
+          ]
+        },
+        {
+          "id": "audio-processing",
+          "name": "Audio Processing",
+          "subtopics": [
+            {
+              "id": "pretrained-audio-encoders",
+              "name": "Pre-trained Audio Encoders: HuBERT",
+              "category": "Practice"
+            },
+            {
+              "id": "audio-models",
+              "name": "Audio Models: Qwen-Audio, Whisper, Voxtral",
+              "category": "Practice"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recommended_resources": [
+    {
+      "id": "ioai-education-hub",
+      "title": "IOAI Education Hub",
+      "type": "official_resource_hub",
+      "url": "https://ioai-official.org/resources/",
+      "description": "Curated open educational materials recommended for IOAI preparation."
+    },
+    {
+      "id": "acm-india-ai-olympiad-resources",
+      "title": "ACM India AI Olympiad Resources",
+      "type": "resource_collection",
+      "url": "https://india.acm.org/education/ai-olympiad-resources",
+      "description": "Educational resources for AI Olympiad preparation."
+    },
+    {
+      "id": "fast-ai",
+      "title": "fast.ai",
+      "type": "online_course",
+      "url": "https://course.fast.ai/",
+      "description": "Practical deep learning course."
+    },
+    {
+      "id": "google-ml-crash-course",
+      "title": "Google Machine Learning Crash Course",
+      "type": "online_course",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "description": "Machine learning concepts and practical exercises."
+    },
+    {
+      "id": "mit-6-s191",
+      "title": "MIT 6.S191: Introduction to Deep Learning",
+      "type": "online_course",
+      "url": "https://introtodeeplearning.com/",
+      "description": "Introduction to deep learning."
+    },
+    {
+      "id": "elements-of-ai",
+      "title": "Elements of AI",
+      "type": "online_course",
+      "url": "https://www.elementsofai.com/",
+      "description": "Introductory artificial intelligence course."
+    },
+    {
+      "id": "stanford-cs229",
+      "title": "Stanford CS229",
+      "type": "online_course",
+      "url": "https://cs229.stanford.edu/",
+      "description": "Machine learning course materials."
+    },
+    {
+      "id": "dive-into-deep-learning",
+      "title": "Dive into Deep Learning",
+      "type": "textbook",
+      "url": "https://d2l.ai/",
+      "description": "Interactive deep learning textbook with code examples."
+    },
+    {
+      "id": "goodfellow-deep-learning",
+      "title": "Deep Learning Book",
+      "type": "textbook",
+      "url": "https://www.deeplearningbook.org/",
+      "description": "Deep learning textbook by Ian Goodfellow, Yoshua Bengio, and Aaron Courville."
+    },
+    {
+      "id": "ml-yearning",
+      "title": "Machine Learning Yearning",
+      "type": "book",
+      "url": "https://www.mlyearning.org/",
+      "description": "Practical guidance on structuring machine learning projects."
+    },
+    {
+      "id": "deep-learning-with-python",
+      "title": "Deep Learning with Python",
+      "type": "book",
+      "url": "https://www.manning.com/books/deep-learning-with-python-third-edition",
+      "description": "Book by François Chollet on deep learning with Python."
+    },
+    {
+      "id": "kaggle-learn",
+      "title": "Kaggle Learn",
+      "type": "practical_learning_platform",
+      "url": "https://www.kaggle.com/learn",
+      "description": "Practical courses on Python, data handling, and machine learning."
+    },
+    {
+      "id": "pytorch-tutorials",
+      "title": "PyTorch Tutorials",
+      "type": "documentation",
+      "url": "https://docs.pytorch.org/tutorials/",
+      "description": "Practical guides for using PyTorch."
+    },
+    {
+      "id": "stanford-cs231n",
+      "title": "Stanford CS231n",
+      "type": "course",
+      "url": "https://cs231n.stanford.edu/",
+      "description": "Deep learning for computer vision."
+    },
+    {
+      "id": "stanford-cs224n",
+      "title": "Stanford CS224n",
+      "type": "course",
+      "url": "https://web.stanford.edu/class/cs224n/",
+      "description": "Natural language processing with deep learning."
+    },
+    {
+      "id": "andrej-karpathy-materials",
+      "title": "Andrej Karpathy's Educational Materials",
+      "type": "educational_resources",
+      "url": "https://karpathy.ai/",
+      "description": "Instructional materials on neural networks and deep learning."
+    }
+  ],
+  "content_policy": {
+    "preserve_official_topic_names": true,
+    "preserve_official_classifications": true,
+    "require_source_attribution": true,
+    "verify_before_publishing": true,
+    "allow_ai_generated_explanations": true,
+    "distinguish_official_material_from_editorials": true
+  }
+}
