@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "year": 2024,
+  "competition": "International Olympiad in Artificial Intelligence",
+  "source_type": "official_archive_index",
+  "official_repository": "https://github.com/IOAI-official/IOAI-2024",
+  "official_task_page": "https://ioai-official.org/2024-tasks/",
+  "licence": "CC BY 4.0 (as stated by the official repository; verify individual assets)",
+  "rounds": [
+    {
+      "id": "at-home-scientific",
+      "name": "Scientific Round — At-Home Stage",
+      "task_count": 3,
+      "topics": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Computer Vision"
+      ],
+      "source_url": "https://ioai-official.org/2024-tasks/",
+      "materials_url": "https://ioai-official.org/wp-content/uploads/2025/06/At-home-problems.zip",
+      "solutions_url": "https://ioai-official.org/wp-content/uploads/2025/06/Best-solutions-at-home-problems.zip"
+    },
+    {
+      "id": "on-site-scientific",
+      "name": "Scientific Round — On-Site Stage",
+      "task_count": 3,
+      "topics": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Computer Vision"
+      ],
+      "duration_hours": 8,
+      "source_url": "https://github.com/IOAI-official/IOAI-2024/tree/main/On-Site-Round",
+      "materials_url": "https://ioai-official.org/wp-content/uploads/2025/06/On-site-problems.zip",
+      "solutions_url": "https://ioai-official.org/wp-content/uploads/2025/06/Best-solutions-onsite.zip"
+    },
+    {
+      "id": "practical-team-challenge",
+      "name": "Practical Team Challenge",
+      "task_count": 1,
+      "topics": [
+        "Generative AI",
+        "Image Generation",
+        "Video Generation"
+      ],
+      "summary": "Create an album cover and music video using the supplied creative brief and assets.",
+      "source_url": "https://ioai-official.org/2024-tasks/"
+    }
+  ],
+  "notes": "This catalogue links to official archives. Use the original task files for full statements, datasets, and evaluation details."
+}
