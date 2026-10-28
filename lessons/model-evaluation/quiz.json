@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "lesson_id": "model-evaluation",
+  "title": "Model Evaluation and Generalization Quiz",
+  "difficulty": "intermediate",
+  "passing_score_percent": 70,
+  "questions": [
+    {
+      "id": "mod-q001",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "What is the main purpose of this topic?",
+      "options": [
+        {
+          "id": "A",
+          "text": "To prepare, understand, or evaluate data and models using the methods covered in the lesson",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "To guarantee that every model is correct",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "To replace all reasoning with a single metric",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "To avoid testing code",
+          "is_correct": false
+        }
+      ],
+      "explanation": "The methods support a reproducible workflow but cannot guarantee perfect results.",
+      "tags": [
+        "concepts"
+      ]
+    },
+    {
+      "id": "mod-q002",
+      "type": "single_select",
+      "difficulty": "easy",
+      "question": "Which practice is most important for a trustworthy workflow?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Inspect data and keep evaluation data separate from fitting and tuning",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "Tune repeatedly on the final test set",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "Ignore missing values",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "Choose a method based only on its name",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Data inspection and separation of fitting from evaluation reduce errors and overly optimistic estimates.",
+      "tags": [
+        "workflow"
+      ]
+    },
+    {
+      "id": "mod-q003",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "What should you do when results are surprising?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Check assumptions, data types, shapes, and a small reproducible example",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "Immediately discard the data",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "Report the best-looking result only",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "Assume the library is wrong",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A systematic check is more reliable than guessing or selectively reporting results.",
+      "tags": [
+        "debugging"
+      ]
+    },
+    {
+      "id": "mod-q004",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "Why is a baseline useful?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It provides a simple reference against which a more complex method can be compared",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "It proves the complex method is unnecessary in every task",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "It guarantees high accuracy",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "It eliminates the need for a test set",
+          "is_correct": false
+        }
+      ],
+      "explanation": "A baseline contextualizes performance and helps determine whether added complexity is worthwhile.",
+      "tags": [
+        "evaluation"
+      ]
+    },
+    {
+      "id": "mod-q005",
+      "type": "single_select",
+      "difficulty": "medium",
+      "question": "Which statement about sample or model results is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Results should be interpreted with their assumptions and limitations",
+          "is_correct": true
+        },
+        {
+          "id": "B",
+          "text": "A single result always proves causation",
+          "is_correct": false
+        },
+        {
+          "id": "C",
+          "text": "Synthetic examples prove deployment performance",
+          "is_correct": false
+        },
+        {
+          "id": "D",
+          "text": "A high score removes all uncertainty",
+          "is_correct": false
+        }
+      ],
+      "explanation": "Evidence must be interpreted in context; toy data and single scores have limited scope.",
+      "tags": [
+        "reasoning"
+      ]
+    }
+  ]
+}
