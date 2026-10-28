@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "year": 2025,
+  "competition": "International Olympiad in Artificial Intelligence",
+  "source_type": "official_archive_index",
+  "official_repository": "https://github.com/IOAI-official/IOAI-2025",
+  "licence": "CC BY 4.0 (as stated by official repository)",
+  "rounds": [
+    {
+      "id": "at-home",
+      "name": "At-Home Round",
+      "source_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/At-Home-Round",
+      "task_count": null
+    },
+    {
+      "id": "individual-contest",
+      "name": "Individual Contest",
+      "source_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest",
+      "task_count": 6,
+      "tasks": [
+        {
+          "id": "radar",
+          "number": 1,
+          "title": "Radar",
+          "area": [
+            "Machine Learning"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        },
+        {
+          "id": "chicken-counting",
+          "number": 2,
+          "title": "Chicken Counting",
+          "area": [
+            "Computer Vision"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        },
+        {
+          "id": "concepts",
+          "number": 3,
+          "title": "Concepts",
+          "area": [
+            "NLP",
+            "Semantic Representation"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        },
+        {
+          "id": "restroom-icon-matching",
+          "number": 4,
+          "title": "Restroom Icon Matching",
+          "area": [
+            "Computer Vision",
+            "Visual Matching"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        },
+        {
+          "id": "antique-painting-authentication",
+          "number": 5,
+          "title": "Antique Painting Authentication",
+          "area": [
+            "Computer Vision",
+            "Image Analysis"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        },
+        {
+          "id": "pixel-efficiency",
+          "number": 6,
+          "title": "Pixel Efficiency",
+          "area": [
+            "Computer Vision",
+            "Model Efficiency"
+          ],
+          "statement_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/Individual-Contest"
+        }
+      ]
+    },
+    {
+      "id": "gaite",
+      "name": "GAITE Contest",
+      "source_url": "https://github.com/IOAI-official/IOAI-2025/tree/main/GAITE-Contest",
+      "summary": "Adapted contest track with additional hints."
+    },
+    {
+      "id": "team-challenge",
+      "name": "Team Challenge — Factory of the Future",
+      "source_url": "https://ioai-official.org/",
+      "summary": "Robotics-oriented challenge with simulated and real-robot stages."
+    }
+  ],
+  "notes": "The official repository contains statements, datasets, reference solutions, validation/test data, and translations. Use the source repository for exact per-task file paths."
+}
