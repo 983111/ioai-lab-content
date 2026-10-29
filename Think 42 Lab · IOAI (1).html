@@ -242,8 +242,8 @@ document.addEventListener("change",e=>{const k=e.target.dataset&&e.target.datase
 document.addEventListener("click",e=>{const b=e.target.closest("[data-seg],[data-reset],[data-n],[data-copy]");if(!b)return;const d=b.dataset;if(d.seg){const i=d.seg.indexOf(":");sv(D.sim.find(s=>s.id===S.did))[d.seg.slice(0,i)]=d.seg.slice(i+1);return route()}if(d.reset){delete S.sv[S.did];return route()}if(d.copy)return cp($("#code").textContent);const n=d.n,id=S.did,k="runs."+id,R=ls.g(k,[]);if(n==="copyruns")return R.length?cp(JSON.stringify(R,null,2)):toast("No runs to copy yet.");if(n.startsWith("delrun:")){R.splice(+n.split(":")[1],1);ls.s(k,R);return route()}if(n==="saverun"){const rec={experiment_id:id,metrics:{}};document.querySelectorAll("[data-r]").forEach(i=>{const f=i.dataset.r,v=i.value.trim();if(f.startsWith("m-")){if(v)rec.metrics[f.slice(2)]=v}else rec[f]=v});if(!rec.run_name)return toast("Enter a run name first.");R.push(rec);ls.s(k,R);route();toast("Run saved in this browser.")}});
 
 /* Data-driven curriculum and resources */
-const rawPath=p=>/^https?:\\/\\//i.test(String(p||""))?String(p):RAW.replace(/app-data\\/$/,"")+String(p||"").replace(/^\\//,"");
-const resourceHref=item=>{const u=String(item.url||"");return /^https?:\\/\\//i.test(u)?u:rawPath(u)};
+const rawPath=p=>{const u=String(p||"");return u.startsWith("http://")||u.startsWith("https://")?u:RAW.slice(0,RAW.length-"app-data/".length)+(u.startsWith("/")?u.slice(1):u)};
+const resourceHref=item=>{const u=String(item.url||"");return u.startsWith("http://")||u.startsWith("https://")?u:rawPath(u)};
 const pathTrackCard=t=>`<button class="card" data-go="path.${e2(t.id)}"><span class="ic">${ic(t.icon==="triangle"?"math":t.icon==="image"?"image":t.icon==="brain"?"ml":"code")}</span>${ic("arrow","go")}<h3>${e2(t.title)}</h3><p>${e2(t.description)}</p><div class="meta">${(t.modules||[]).length} modules · ${(t.modules||[]).filter(m=>m.lesson_path).length} lessons available</div></button>`;
 const pathModuleCard=(m)=>{const links=[];
  if(m.lesson_path)links.push(A(rawPath(m.lesson_path),"Lesson"));
