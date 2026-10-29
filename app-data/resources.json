@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "section": "resources",
+  "title": "Resources",
+  "description": "Reference material for IOAI preparation, linked to official sources and established learning resources.",
+  "categories": [
+    {
+      "id": "syllabus",
+      "title": "Syllabus",
+      "description": "Official IOAI topic lists and preparation guidance.",
+      "items": [
+        {
+          "id": "ioai-education-hub",
+          "title": "Official IOAI Education Hub",
+          "description": "Official educational resources and preparation material.",
+          "type": "official",
+          "url": "https://ioai-official.org/resources/",
+          "provider": "International Olympiad in Artificial Intelligence",
+          "access": "external",
+          "attribution": "Official IOAI website"
+        },
+        {
+          "id": "ioai-2026-materials",
+          "title": "IOAI 2026 Official Materials",
+          "description": "Official repository with at-home tasks, individual contest materials, and GAITE hints.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official IOAI repository"
+        },
+        {
+          "id": "python-tutorial",
+          "title": "Python Tutorial",
+          "description": "Core language syntax and programming concepts.",
+          "type": "documentation",
+          "url": "https://docs.python.org/3/tutorial/",
+          "provider": "Python Software Foundation",
+          "access": "external"
+        }
+      ]
+    },
+    {
+      "id": "past-papers",
+      "title": "Past papers",
+      "description": "Official past competition problems and task materials.",
+      "items": [
+        {
+          "id": "ioai-2024",
+          "title": "IOAI 2024 Tasks",
+          "description": "Official repository for the first IOAI competition.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2024",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-2025",
+          "title": "IOAI 2025 Tasks",
+          "description": "Official repository for the 2025 competition.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2025",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-2026",
+          "title": "IOAI 2026 Tasks",
+          "description": "Official at-home and individual contest task materials.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-task-index",
+          "title": "IOAI Lab Task Index",
+          "description": "Year-by-year index with summaries and links to official materials.",
+          "type": "lab-index",
+          "url": "olympiad-tasks/README.md",
+          "provider": "IOAI Lab",
+          "access": "repository",
+          "attribution": "Index only; original task materials remain at their official sources."
+        }
+      ]
+    },
+    {
+      "id": "cheat-sheets",
+      "title": "Cheat sheets",
+      "description": "Quick references for programming, data work, and machine learning.",
+      "items": [
+        {
+          "id": "numpy-quickstart",
+          "title": "NumPy Quickstart",
+          "description": "Arrays, indexing, vectorized operations, and shapes.",
+          "type": "documentation",
+          "url": "https://numpy.org/doc/stable/user/quickstart.html",
+          "provider": "NumPy",
+          "access": "external"
+        },
+        {
+          "id": "pandas-intro",
+          "title": "pandas Intro Tutorials",
+          "description": "Read, select, filter, summarize, and reshape tabular data.",
+          "type": "documentation",
+          "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
+          "provider": "pandas",
+          "access": "external"
+        },
+        {
+          "id": "sklearn-model-evaluation",
+          "title": "scikit-learn Model Evaluation",
+          "description": "Reference for classification and regression metrics.",
+          "type": "documentation",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "provider": "scikit-learn",
+          "access": "external"
+        },
+        {
+          "id": "pytorch-tutorials",
+          "title": "PyTorch Tutorials",
+          "description": "Tensor operations, neural networks, and training workflows.",
+          "type": "documentation",
+          "url": "https://docs.pytorch.org/tutorials/",
+          "provider": "PyTorch",
+          "access": "external"
+        }
+      ]
+    },
+    {
+      "id": "reading-list",
+      "title": "Reading list",
+      "description": "Books, courses, and reference material for deeper study.",
+      "items": [
+        {
+          "id": "google-ml-crash-course",
+          "title": "Machine Learning Crash Course",
+          "description": "Interactive lessons and exercises covering core ML concepts.",
+          "type": "course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "provider": "Google",
+          "access": "external"
+        },
+        {
+          "id": "kaggle-learn",
+          "title": "Kaggle Learn",
+          "description": "Short practical courses in Python, pandas, visualization, and machine learning.",
+          "type": "course",
+          "url": "https://www.kaggle.com/learn",
+          "provider": "Kaggle",
+          "access": "external"
+        },
+        {
+          "id": "d2l",
+          "title": "Dive into Deep Learning",
+          "description": "An interactive book covering deep learning theory and implementation.",
+          "type": "book",
+          "url": "https://d2l.ai/",
+          "provider": "D2L community",
+          "access": "external"
+        },
+        {
+          "id": "python-data-science-handbook",
+          "title": "Python Data Science Handbook",
+          "description": "Practical reference for NumPy, pandas, visualization, and machine learning.",
+          "type": "book",
+          "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+          "provider": "Jake VanderPlas",
+          "access": "external"
+        },
+        {
+          "id": "fastai",
+          "title": "Practical Deep Learning for Coders",
+          "description": "Project-oriented deep learning course.",
+          "type": "course",
+          "url": "https://course.fast.ai/",
+          "provider": "fast.ai",
+          "access": "external"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "External links open the original provider's materials; availability and terms are controlled by those providers.",
+    "Official contest tasks are linked, not rewritten or presented as IOAI Lab-authored content.",
+    "The repository-local task index is a navigation file, not a downloadable paper."
+  ]
+}
