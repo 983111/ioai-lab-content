@@ -28,11 +28,11 @@ Each lesson folder should contain:
 - [x] `python-fundamentals/quiz.json`
 - [x] `python-fundamentals/exercises.json`
 - [x] `python-fundamentals/starter.ipynb`
-- [ ] `data-manipulation/`
-- [ ] `statistics/`
-- [ ] `regression/`
-- [ ] `classification/`
-- [ ] `model-evaluation/`
+- [x] `data-manipulation/lesson.md`, `quiz.json`, `exercises.json`, `starter.ipynb`
+- [x] `statistics/lesson.md`, `quiz.json`, `exercises.json`, `starter.ipynb`
+- [x] `regression/lesson.md`, `quiz.json`, `exercises.json`, `starter.ipynb`
+- [x] `classification/lesson.md`, `quiz.json`, `exercises.json`, `starter.ipynb`
+- [x] `model-evaluation/lesson.md`, `quiz.json`, `exercises.json`, `starter.ipynb`
 
 ## Data conventions
 
