@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "section": "learning-path",
+  "title": "Learning Path",
+  "description": "A progressive route from programming and data skills to practical machine-learning workflows.",
+  "tracks": [
+    {
+      "id": "python-programming",
+      "title": "Python & Programming",
+      "description": "Learn Python fundamentals, data structures and practical data handling.",
+      "level": "Beginner",
+      "icon": "code",
+      "order": 1,
+      "modules": [
+        {
+          "id": "python-fundamentals",
+          "title": "Python Fundamentals",
+          "description": "Variables, data types, conditions, loops, collections, functions, and debugging.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/python-fundamentals/lesson.md",
+          "quiz_path": "lessons/python-fundamentals/quiz.json",
+          "exercises_path": "lessons/python-fundamentals/exercises.json",
+          "notebook_path": "lessons/python-fundamentals/starter.ipynb",
+          "outcomes": [
+            "Write small Python programs",
+            "Use collections and functions",
+            "Debug common errors"
+          ]
+        },
+        {
+          "id": "data-manipulation",
+          "title": "NumPy and pandas",
+          "description": "Inspect, filter, clean, and prepare datasets.",
+          "order": 2,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/data-manipulation/lesson.md",
+          "quiz_path": "lessons/data-manipulation/quiz.json",
+          "exercises_path": "lessons/data-manipulation/exercises.json",
+          "notebook_path": "lessons/data-manipulation/starter.ipynb",
+          "outcomes": [
+            "Inspect tabular data",
+            "Handle missing values",
+            "Prepare features without leakage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mathematics-for-ai",
+      "title": "Mathematics for AI",
+      "description": "Build probability and statistical reasoning, then use linked references to study linear algebra and discrete mathematics.",
+      "level": "Beginner",
+      "icon": "triangle",
+      "order": 2,
+      "modules": [
+        {
+          "id": "statistics",
+          "title": "Statistics and Probability",
+          "description": "Summary statistics, variation, distributions, sampling, and correlation.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/statistics/lesson.md",
+          "quiz_path": "lessons/statistics/quiz.json",
+          "exercises_path": "lessons/statistics/exercises.json",
+          "notebook_path": "lessons/statistics/starter.ipynb",
+          "outcomes": [
+            "Calculate common summary statistics",
+            "Reason about probability and sampling",
+            "Interpret correlation carefully"
+          ]
+        },
+        {
+          "id": "linear-algebra-reference",
+          "title": "Linear Algebra Foundations",
+          "description": "Supplementary external reading on vectors, matrices, and transformations; a dedicated local lesson is not yet included.",
+          "order": 2,
+          "level": "Beginner",
+          "resource_urls": [
+            "https://numpy.org/doc/stable/user/quickstart.html",
+            "https://www.khanacademy.org/math/linear-algebra"
+          ],
+          "outcomes": [
+            "Understand vectors and matrices",
+            "Connect array operations to model inputs"
+          ],
+          "content_status": "external-reference"
+        },
+        {
+          "id": "discrete-math-reference",
+          "title": "Discrete Mathematics Practice",
+          "description": "Supplementary external reading for logic, sets, counting, and combinatorics; a dedicated local lesson is not yet included.",
+          "order": 3,
+          "level": "Beginner",
+          "resource_urls": [
+            "https://discrete.openmathbooks.org/dmoi3.html"
+          ],
+          "outcomes": [
+            "Use set and counting notation",
+            "Break problems into logical cases"
+          ],
+          "content_status": "external-reference"
+        }
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "title": "Machine Learning",
+      "description": "Train baseline models, compare approaches, and evaluate generalization.",
+      "level": "Beginner to Intermediate",
+      "icon": "brain",
+      "order": 3,
+      "modules": [
+        {
+          "id": "regression",
+          "title": "Regression",
+          "description": "Predict numerical targets and compare a model against a baseline.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/regression/lesson.md",
+          "quiz_path": "lessons/regression/quiz.json",
+          "exercises_path": "lessons/regression/exercises.json",
+          "notebook_path": "lessons/regression/starter.ipynb",
+          "outcomes": [
+            "Separate features and target",
+            "Train a regression baseline",
+            "Interpret MAE and RMSE"
+          ]
+        },
+        {
+          "id": "classification",
+          "title": "Classification",
+          "description": "Train classifiers, inspect probabilities, and choose decision thresholds.",
+          "order": 2,
+          "level": "Intermediate",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/classification/lesson.md",
+          "quiz_path": "lessons/classification/quiz.json",
+          "exercises_path": "lessons/classification/exercises.json",
+          "notebook_path": "lessons/classification/starter.ipynb",
+          "outcomes": [
+            "Train a classifier",
+            "Compare precision and recall",
+            "Inspect class-specific errors"
+          ]
+        },
+        {
+          "id": "model-evaluation",
+          "title": "Model Evaluation",
+          "description": "Use validation correctly and identify leakage, imbalance, and misleading metrics.",
+          "order": 3,
+          "level": "Intermediate",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/model-evaluation/lesson.md",
+          "quiz_path": "lessons/model-evaluation/quiz.json",
+          "exercises_path": "lessons/model-evaluation/exercises.json",
+          "notebook_path": "lessons/model-evaluation/starter.ipynb",
+          "outcomes": [
+            "Calculate classification metrics",
+            "Use validation and cross-validation",
+            "Avoid data leakage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "title": "Computer Vision",
+      "description": "Start with image classification and learn how convolutional networks process images.",
+      "level": "Intermediate",
+      "icon": "image",
+      "order": 4,
+      "modules": [
+        {
+          "id": "cnn-image-classification",
+          "title": "Image Classification with a CNN",
+          "description": "External guided tutorial; this is a linked reference rather than a local IOAI Lab lesson.",
+          "order": 1,
+          "level": "Intermediate",
+          "estimated_minutes": 60,
+          "resource_urls": [
+            "https://docs.pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html"
+          ],
+          "notebook_library_id": "image-classification-cnn",
+          "outcomes": [
+            "Understand convolution and pooling",
+            "Train a small image classifier",
+            "Compare training and validation behavior"
+          ],
+          "content_status": "external-reference"
+        }
+      ]
+    }
+  ],
+  "completion_rules": {
+    "lesson_complete_when": "The learner marks the lesson complete after reviewing the lesson and attempting its quiz or exercises.",
+    "progress_storage": "Progress requires frontend persistence; this JSON file defines curriculum content and does not store user progress."
+  },
+  "content_notes": [
+    "Local lesson paths refer to repository files; the website must resolve them relative to its content base URL or fetch them from GitHub raw URLs.",
+    "External-reference modules are intentionally labelled and should not be counted as local lesson files.",
+    "Do not show completion or quiz scores until the frontend has implemented those behaviors."
+  ]
+}
