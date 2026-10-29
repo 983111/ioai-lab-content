@@ -142,7 +142,7 @@ $("#main").innerHTML=V[v]();const two=v==="home";$("#wrap").classList.toggle("tw
 function go(r){if(S.q){S.q="";$("#q").value=""}location.hash===("#"+r)?route():location.hash=r}
 addEventListener("hashchange",route);
 $("#q").addEventListener("input",e=>{S.q=e.target.value.trim();route()});
-document.addEventListener("click",e=>{const rb=e.target.closest("[data-read]");if(rb){e.preventDefault();return openContent(rb.dataset.read,rb.dataset.readTitle||"Study material")}const b=e.target.closest("[data-go],[data-open],[data-f],[data-act]");if(!b)return;
+document.addEventListener("click",e=>{const rb=e.target.closest("[data-read]");if(rb){e.preventDefault();return openContent(rb.dataset.read,rb.dataset.readTitle||"Study material")}const rawLink=e.target.closest("a[href]");if(rawLink&&/^https?:\/\/raw\.githubusercontent\.com\/983111\/ioai-lab-content\/main\/(lessons|olympiad-tasks)\//i.test(rawLink.href)&&/\.(md|json|ipynb|txt)$/i.test(rawLink.href)){e.preventDefault();return openContent(rawLink.href,rawLink.textContent.trim()||"Study material")}const b=e.target.closest("[data-go],[data-open],[data-f],[data-act]");if(!b)return;
 if(b.dataset.go)return go(b.dataset.go);
 if(b.dataset.open){const[k,i]=[b.dataset.open[0],+b.dataset.open.slice(1)],d=INFO[k][i];return modal(d[0],`<p>${d[1]}</p><div class="meta">0 lessons · 0 cells · 0 runs</div>`,k==="n"?"Open notebook":k==="s"?"Launch":k==="r"?"Open":"Start module",()=>toast("Nothing published here yet — 0 items available."))}
 if(b.dataset.f){const[k,v]=b.dataset.f.split(":");S[k]=v;return route()}
