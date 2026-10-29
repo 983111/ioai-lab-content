@@ -193,7 +193,405 @@ pb("pa-009","Find a Useful Feature Set","Advanced","Feature Engineering",50,"not
 pb("pa-010","Reconstruct an Audio Sequence","Advanced","Audio and Sequence Reasoning",60,"notebook","Given short audio segments and metadata, infer the most likely order of segments. Design a scoring method, test it on labelled examples, and analyze ambiguous cases.",["Inspect available metadata and audio features.","Build a simple similarity or classification baseline.","Evaluate ordering accuracy on held-out examples.","Inspect cases where the sequence is ambiguous."],["Do not use external data unless explicitly allowed.","Keep validation examples separate from tuning."],"# Suggested starting point: inspect duration, energy, and available embeddings.\n# TODO: define a pairwise compatibility score and sequence reconstruction method",["Baseline","Valid held-out evaluation","Ambiguity analysis"],"Sequence-level accuracy",["Start with a simple pairwise score before optimizing a complex sequence model.","Segment similarity alone may not uniquely determine order."]),
 pb("pa-011","Reason About Semantic Similarity","Advanced","Natural Language Processing",45,"notebook","Build a word or sentence similarity baseline and study where it fails. Compare a simple lexical method with an embedding-based method if an allowed embedding model is available.",["Define a small labelled similarity set.","Implement a lexical baseline.","Compare with a permitted embedding representation.","Inspect examples with similar surface form but different meaning."],["Document model and resource availability.","Do not equate embedding similarity with truth or synonymy."],"from sklearn.feature_extraction.text import TfidfVectorizer\nfrom sklearn.metrics.pairwise import cosine_similarity\n\n# TODO: vectorize text and compute pairwise similarities",["Baseline comparison","Careful interpretation","Error analysis"],"Spearman correlation or ranking accuracy",["Lexical overlap can fail on paraphrases.","Polysemy and context affect semantic similarity."]),
 pb("pa-012","Design a Competition-Ready Evaluation","Advanced","ML Systems",45,"written-plus-code","Create an evaluation plan for a new AI task. Specify a baseline, split strategy, metric, reproducibility controls, and checks against leakage or overfitting.",["Describe task type and target output.","Choose a baseline that can be implemented quickly.","Select a metric aligned with the task objective.","Write a reproducibility and leakage checklist."],["State assumptions and limitations.","Do not report hypothetical results as measured results."],"# Complete the evaluation plan in Markdown or a notebook.\n# Include data split, baseline, metric, random seed, and failure analysis.",["Metric-task alignment","Strong baseline","Leakage prevention","Reproducibility"],"Rubric-based",["A baseline helps determine whether a complex approach adds value.","The test set should be used sparingly for final evaluation."])]};
-D.path={tracks:[]};D.res={categories:[]};
+D.path={
+  "schema_version": 1,
+  "section": "learning-path",
+  "title": "Learning Path",
+  "description": "A progressive route from programming and data skills to practical machine-learning workflows.",
+  "tracks": [
+    {
+      "id": "python-programming",
+      "title": "Python & Programming",
+      "description": "Learn Python fundamentals, data structures and practical data handling.",
+      "level": "Beginner",
+      "icon": "code",
+      "order": 1,
+      "modules": [
+        {
+          "id": "python-fundamentals",
+          "title": "Python Fundamentals",
+          "description": "Variables, data types, conditions, loops, collections, functions, and debugging.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/python-fundamentals/lesson.md",
+          "quiz_path": "lessons/python-fundamentals/quiz.json",
+          "exercises_path": "lessons/python-fundamentals/exercises.json",
+          "notebook_path": "lessons/python-fundamentals/starter.ipynb",
+          "outcomes": [
+            "Write small Python programs",
+            "Use collections and functions",
+            "Debug common errors"
+          ]
+        },
+        {
+          "id": "data-manipulation",
+          "title": "NumPy and pandas",
+          "description": "Inspect, filter, clean, and prepare datasets.",
+          "order": 2,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/data-manipulation/lesson.md",
+          "quiz_path": "lessons/data-manipulation/quiz.json",
+          "exercises_path": "lessons/data-manipulation/exercises.json",
+          "notebook_path": "lessons/data-manipulation/starter.ipynb",
+          "outcomes": [
+            "Inspect tabular data",
+            "Handle missing values",
+            "Prepare features without leakage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mathematics-for-ai",
+      "title": "Mathematics for AI",
+      "description": "Build probability and statistical reasoning, then use linked references to study linear algebra and discrete mathematics.",
+      "level": "Beginner",
+      "icon": "triangle",
+      "order": 2,
+      "modules": [
+        {
+          "id": "statistics",
+          "title": "Statistics and Probability",
+          "description": "Summary statistics, variation, distributions, sampling, and correlation.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 150,
+          "lesson_path": "lessons/statistics/lesson.md",
+          "quiz_path": "lessons/statistics/quiz.json",
+          "exercises_path": "lessons/statistics/exercises.json",
+          "notebook_path": "lessons/statistics/starter.ipynb",
+          "outcomes": [
+            "Calculate common summary statistics",
+            "Reason about probability and sampling",
+            "Interpret correlation carefully"
+          ]
+        },
+        {
+          "id": "linear-algebra-reference",
+          "title": "Linear Algebra Foundations",
+          "description": "Supplementary external reading on vectors, matrices, and transformations; a dedicated local lesson is not yet included.",
+          "order": 2,
+          "level": "Beginner",
+          "resource_urls": [
+            "https://numpy.org/doc/stable/user/quickstart.html",
+            "https://www.khanacademy.org/math/linear-algebra"
+          ],
+          "outcomes": [
+            "Understand vectors and matrices",
+            "Connect array operations to model inputs"
+          ],
+          "content_status": "external-reference"
+        },
+        {
+          "id": "discrete-math-reference",
+          "title": "Discrete Mathematics Practice",
+          "description": "Supplementary external reading for logic, sets, counting, and combinatorics; a dedicated local lesson is not yet included.",
+          "order": 3,
+          "level": "Beginner",
+          "resource_urls": [
+            "https://discrete.openmathbooks.org/dmoi3.html"
+          ],
+          "outcomes": [
+            "Use set and counting notation",
+            "Break problems into logical cases"
+          ],
+          "content_status": "external-reference"
+        }
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "title": "Machine Learning",
+      "description": "Train baseline models, compare approaches, and evaluate generalization.",
+      "level": "Beginner to Intermediate",
+      "icon": "brain",
+      "order": 3,
+      "modules": [
+        {
+          "id": "regression",
+          "title": "Regression",
+          "description": "Predict numerical targets and compare a model against a baseline.",
+          "order": 1,
+          "level": "Beginner",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/regression/lesson.md",
+          "quiz_path": "lessons/regression/quiz.json",
+          "exercises_path": "lessons/regression/exercises.json",
+          "notebook_path": "lessons/regression/starter.ipynb",
+          "outcomes": [
+            "Separate features and target",
+            "Train a regression baseline",
+            "Interpret MAE and RMSE"
+          ]
+        },
+        {
+          "id": "classification",
+          "title": "Classification",
+          "description": "Train classifiers, inspect probabilities, and choose decision thresholds.",
+          "order": 2,
+          "level": "Intermediate",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/classification/lesson.md",
+          "quiz_path": "lessons/classification/quiz.json",
+          "exercises_path": "lessons/classification/exercises.json",
+          "notebook_path": "lessons/classification/starter.ipynb",
+          "outcomes": [
+            "Train a classifier",
+            "Compare precision and recall",
+            "Inspect class-specific errors"
+          ]
+        },
+        {
+          "id": "model-evaluation",
+          "title": "Model Evaluation",
+          "description": "Use validation correctly and identify leakage, imbalance, and misleading metrics.",
+          "order": 3,
+          "level": "Intermediate",
+          "estimated_minutes": 180,
+          "lesson_path": "lessons/model-evaluation/lesson.md",
+          "quiz_path": "lessons/model-evaluation/quiz.json",
+          "exercises_path": "lessons/model-evaluation/exercises.json",
+          "notebook_path": "lessons/model-evaluation/starter.ipynb",
+          "outcomes": [
+            "Calculate classification metrics",
+            "Use validation and cross-validation",
+            "Avoid data leakage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer-vision",
+      "title": "Computer Vision",
+      "description": "Start with image classification and learn how convolutional networks process images.",
+      "level": "Intermediate",
+      "icon": "image",
+      "order": 4,
+      "modules": [
+        {
+          "id": "cnn-image-classification",
+          "title": "Image Classification with a CNN",
+          "description": "External guided tutorial; this is a linked reference rather than a local IOAI Lab lesson.",
+          "order": 1,
+          "level": "Intermediate",
+          "estimated_minutes": 60,
+          "resource_urls": [
+            "https://docs.pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html"
+          ],
+          "notebook_library_id": "image-classification-cnn",
+          "outcomes": [
+            "Understand convolution and pooling",
+            "Train a small image classifier",
+            "Compare training and validation behavior"
+          ],
+          "content_status": "external-reference"
+        }
+      ]
+    }
+  ],
+  "completion_rules": {
+    "lesson_complete_when": "The learner marks the lesson complete after reviewing the lesson and attempting its quiz or exercises.",
+    "progress_storage": "Progress requires frontend persistence; this JSON file defines curriculum content and does not store user progress."
+  },
+  "content_notes": [
+    "Local lesson paths refer to repository files; the website must resolve them relative to its content base URL or fetch them from GitHub raw URLs.",
+    "External-reference modules are intentionally labelled and should not be counted as local lesson files.",
+    "Do not show completion or quiz scores until the frontend has implemented those behaviors."
+  ]
+};
+D.res={
+  "schema_version": 1,
+  "section": "resources",
+  "title": "Resources",
+  "description": "Reference material for IOAI preparation, linked to official sources and established learning resources.",
+  "categories": [
+    {
+      "id": "syllabus",
+      "title": "Syllabus",
+      "description": "Official IOAI topic lists and preparation guidance.",
+      "items": [
+        {
+          "id": "ioai-education-hub",
+          "title": "Official IOAI Education Hub",
+          "description": "Official educational resources and preparation material.",
+          "type": "official",
+          "url": "https://ioai-official.org/resources/",
+          "provider": "International Olympiad in Artificial Intelligence",
+          "access": "external",
+          "attribution": "Official IOAI website"
+        },
+        {
+          "id": "ioai-2026-materials",
+          "title": "IOAI 2026 Official Materials",
+          "description": "Official repository with at-home tasks, individual contest materials, and GAITE hints.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official IOAI repository"
+        },
+        {
+          "id": "python-tutorial",
+          "title": "Python Tutorial",
+          "description": "Core language syntax and programming concepts.",
+          "type": "documentation",
+          "url": "https://docs.python.org/3/tutorial/",
+          "provider": "Python Software Foundation",
+          "access": "external"
+        }
+      ]
+    },
+    {
+      "id": "past-papers",
+      "title": "Past papers",
+      "description": "Official past competition problems and task materials.",
+      "items": [
+        {
+          "id": "ioai-2024",
+          "title": "IOAI 2024 Tasks",
+          "description": "Official repository for the first IOAI competition.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2024",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-2025",
+          "title": "IOAI 2025 Tasks",
+          "description": "Official repository for the 2025 competition.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2025",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-2026",
+          "title": "IOAI 2026 Tasks",
+          "description": "Official at-home and individual contest task materials.",
+          "type": "official",
+          "url": "https://github.com/IOAI-official/IOAI-2026",
+          "provider": "IOAI Official",
+          "access": "external",
+          "attribution": "Official task archive"
+        },
+        {
+          "id": "ioai-task-index",
+          "title": "IOAI Lab Task Index",
+          "description": "Year-by-year index with summaries and links to official materials.",
+          "type": "lab-index",
+          "url": "olympiad-tasks/README.md",
+          "provider": "IOAI Lab",
+          "access": "repository",
+          "attribution": "Index only; original task materials remain at their official sources."
+        }
+      ]
+    },
+    {
+      "id": "cheat-sheets",
+      "title": "Cheat sheets",
+      "description": "Quick references for programming, data work, and machine learning.",
+      "items": [
+        {
+          "id": "numpy-quickstart",
+          "title": "NumPy Quickstart",
+          "description": "Arrays, indexing, vectorized operations, and shapes.",
+          "type": "documentation",
+          "url": "https://numpy.org/doc/stable/user/quickstart.html",
+          "provider": "NumPy",
+          "access": "external"
+        },
+        {
+          "id": "pandas-intro",
+          "title": "pandas Intro Tutorials",
+          "description": "Read, select, filter, summarize, and reshape tabular data.",
+          "type": "documentation",
+          "url": "https://pandas.pydata.org/docs/getting_started/intro_tutorials/",
+          "provider": "pandas",
+          "access": "external"
+        },
+        {
+          "id": "sklearn-model-evaluation",
+          "title": "scikit-learn Model Evaluation",
+          "description": "Reference for classification and regression metrics.",
+          "type": "documentation",
+          "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+          "provider": "scikit-learn",
+          "access": "external"
+        },
+        {
+          "id": "pytorch-tutorials",
+          "title": "PyTorch Tutorials",
+          "description": "Tensor operations, neural networks, and training workflows.",
+          "type": "documentation",
+          "url": "https://docs.pytorch.org/tutorials/",
+          "provider": "PyTorch",
+          "access": "external"
+        }
+      ]
+    },
+    {
+      "id": "reading-list",
+      "title": "Reading list",
+      "description": "Books, courses, and reference material for deeper study.",
+      "items": [
+        {
+          "id": "google-ml-crash-course",
+          "title": "Machine Learning Crash Course",
+          "description": "Interactive lessons and exercises covering core ML concepts.",
+          "type": "course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "provider": "Google",
+          "access": "external"
+        },
+        {
+          "id": "kaggle-learn",
+          "title": "Kaggle Learn",
+          "description": "Short practical courses in Python, pandas, visualization, and machine learning.",
+          "type": "course",
+          "url": "https://www.kaggle.com/learn",
+          "provider": "Kaggle",
+          "access": "external"
+        },
+        {
+          "id": "d2l",
+          "title": "Dive into Deep Learning",
+          "description": "An interactive book covering deep learning theory and implementation.",
+          "type": "book",
+          "url": "https://d2l.ai/",
+          "provider": "D2L community",
+          "access": "external"
+        },
+        {
+          "id": "python-data-science-handbook",
+          "title": "Python Data Science Handbook",
+          "description": "Practical reference for NumPy, pandas, visualization, and machine learning.",
+          "type": "book",
+          "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+          "provider": "Jake VanderPlas",
+          "access": "external"
+        },
+        {
+          "id": "fastai",
+          "title": "Practical Deep Learning for Coders",
+          "description": "Project-oriented deep learning course.",
+          "type": "course",
+          "url": "https://course.fast.ai/",
+          "provider": "fast.ai",
+          "access": "external"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "External links open the original provider's materials; availability and terms are controlled by those providers.",
+    "Official contest tasks are linked, not rewritten or presented as IOAI Lab-authored content.",
+    "The repository-local task index is a navigation file, not a downloadable paper."
+  ]
+};
 const FM={nb:["notebook-library.json","items"],sim:["simulations.json","simulations"],exp:["experiments.json","experiments"],pa:["practice-arena.json","problems"],path:["learning-path.json","tracks"],res:["resources.json","categories"]},ST={};Object.keys(FM).forEach(k=>ST[k]="Bundled snapshot");
 S.sv={};
 (async()=>{await Promise.all(Object.keys(FM).map(async k=>{try{const c=new AbortController(),t=setTimeout(()=>c.abort(),8000),r=await fetch(RAW+FM[k][0],{signal:c.signal,cache:"no-store"});clearTimeout(t);if(!r.ok)throw 0;const json=await r.json(),a=json[FM[k][1]];if(!Array.isArray(a)||!a.length)throw 0;D[k]=(k==="path"||k==="res")?json:a;if(k==="exp")D[k]=a.map(x=>({...x,q:x.question||x.q,expected_learning:Array.isArray(x.expected_learning)?x.expected_learning.join(" "):x.expected_learning}));ST[k]="Live from repository"}catch(e){ST[k]="Bundled snapshot (live fetch unavailable)"}}));if(!S.did)route()})();
