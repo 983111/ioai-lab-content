@@ -144,8 +144,7 @@
         "Diagnose overfitting"
       ],
       "estimated_minutes": 60,
-      "environment": "Google Colab with optional GPU",
-      "source_url": "https://docs.pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html",
+      "environment": "Google Colab or Jupyter",
       "dataset": {
         "type": "public",
         "name": "CIFAR-10",
@@ -155,7 +154,9 @@
         "computer-vision",
         "CNN",
         "PyTorch"
-      ]
+      ],
+      "notebook_path": "lessons/image-classification-cnn/starter.ipynb",
+      "lesson_path": "lessons/image-classification-cnn/lesson.md"
     },
     {
       "id": "text-classification",
@@ -170,7 +171,6 @@
       ],
       "estimated_minutes": 45,
       "environment": "Google Colab or Jupyter",
-      "source_url": "https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html",
       "dataset": {
         "type": "public",
         "name": "Use a small labelled text dataset or create a toy dataset",
@@ -180,7 +180,9 @@
         "NLP",
         "TF-IDF",
         "classification"
-      ]
+      ],
+      "notebook_path": "lessons/text-classification/starter.ipynb",
+      "lesson_path": "lessons/text-classification/lesson.md"
     },
     {
       "id": "experiment-reproducibility",
@@ -195,7 +197,6 @@
       ],
       "estimated_minutes": 30,
       "environment": "Google Colab or Jupyter",
-      "source_url": "https://developers.google.com/machine-learning/crash-course",
       "dataset": {
         "type": "synthetic",
         "description": "Reuses the regression or classification dataset from earlier notebooks"
@@ -204,7 +205,9 @@
         "reproducibility",
         "experiment-tracking",
         "baselines"
-      ]
+      ],
+      "notebook_path": "lessons/experiment-reproducibility/starter.ipynb",
+      "lesson_path": "lessons/experiment-reproducibility/lesson.md"
     }
   ],
   "note": "The five lesson notebook paths point to files in this repository. External notebooks are linked as references and should be opened from their source. Notebook availability and runtime requirements may vary."
