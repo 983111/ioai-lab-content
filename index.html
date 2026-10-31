@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Think 42 Lab · IOAI</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <style>
 :root{--bg:#fff;--bg2:#f5f6f7;--ink:#111318;--mut:#6b7280;--line:#e8eaed;--btn:#111318;--btnt:#fff;--g:#22a559;--a:#f5b021;--v:#7c5cdb;--hov:#f1f2f4;--sh:rgba(17,19,24,.12);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101216;--bg2:#171a1f;--ink:#eceef1;--mut:#9aa1ac;--line:#262a31;--btn:#eceef1;--btnt:#101216;--hov:#1b1e24;--sh:rgba(0,0,0,.5);color-scheme:dark}}
@@ -102,63 +102,6 @@ body[data-auth=in] #auth{display:none}
 .ab .btn{width:100%;justify-content:center;height:40px}.ab .link{font-size:12px}
 .am{min-height:20px;margin:0 0 10px;font-size:12px;color:var(--mut)}.am.bad{color:#c0392b}
 .al{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
-
-/* ===== UI refresh: one font, soft surfaces, indigo accent ===== */
-:root{--bg2:#f6f7f9;--line:#e9ebf0;--mut:#667085;--ink:#0f1222;--ac:#4f46e5;--acs:rgba(79,70,229,.12);--r:14px;--s1:0 1px 2px rgba(16,24,40,.05);--s2:0 12px 28px -12px rgba(16,24,40,.18);--font:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
-html{scroll-behavior:smooth}
-body,button,input,select,textarea,svg text,table{font-family:var(--font)}
-body{font-size:14px;line-height:1.6;letter-spacing:-.003em}
-pre,code,pre code{font-family:var(--mono)}
-::selection{background:var(--acs)}
-:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-h1,h2,h3{font-weight:600;color:var(--ink)}h1{letter-spacing:-.035em}h2{font-size:18px;letter-spacing:-.02em}h3{font-size:14px}
-.eb{color:var(--ac);font-weight:600;letter-spacing:.08em}
-.mut,.sec p,.hero p,.meta{color:var(--mut)}.meta{font-size:11px}.sm{font-size:12px}
-header{height:64px;padding:0 28px;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(180%) blur(14px);backdrop-filter:saturate(180%) blur(14px)}
-.logo{font-weight:700;letter-spacing:-.03em}.sub{font-weight:500;color:var(--mut)}
-.search{height:38px;border:1px solid transparent;background:var(--bg2);border-radius:999px;transition:.15s}.search:focus-within{background:var(--bg);border-color:var(--ac);box-shadow:0 0 0 4px var(--acs)}.search input{font-size:13px}
-.hl button{color:var(--mut);font-size:13px;transition:color .15s}.hl button:hover{color:var(--ink)}
-.av{width:36px;height:36px;transition:.15s}.av:hover{background:var(--acs);color:var(--ac)}
-.btn{height:40px;padding:0 20px;border-radius:10px;font-size:13px;font-weight:500;box-shadow:var(--s1);transition:transform .15s,box-shadow .15s,background .15s,border-color .15s}
-.btn:hover{opacity:1;transform:translateY(-1px);box-shadow:var(--s2)}.btn:active{transform:none}.btn:disabled{opacity:.55;transform:none;cursor:default}
-.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}.btn.p:hover{background:#4338ca;border-color:#4338ca}.btn.sm2{height:32px;padding:0 14px}
-.link{color:var(--ac);font-weight:500;font-size:12px}.link:hover{text-decoration:underline}
-.card{border-radius:var(--r);padding:20px 18px 16px;box-shadow:var(--s1);transition:transform .18s,box-shadow .18s,border-color .18s}
-button.card:hover,a.card:hover{border-color:var(--ac);box-shadow:var(--s2);transform:translateY(-2px)}
-.card .ic{width:40px;height:40px;border-radius:12px;background:var(--acs);color:var(--ac)}.card .go{color:var(--mut);transition:.18s}button.card:hover .go{color:var(--ac);transform:translateX(2px)}
-.card p{font-size:12.5px;line-height:1.55}
-.pan{border-radius:16px;padding:22px;box-shadow:var(--s1)}
-.chip{height:34px;padding:0 16px;border-radius:999px;transition:.15s}.chip:hover{border-color:var(--ac)}.chip.on{background:var(--ac);border-color:var(--ac);color:#fff}
-.lv,.tag{border-radius:999px;font-weight:500}.lv{padding:2px 10px}.tag{padding:2px 10px}.tags span{border-radius:999px;padding:2px 10px}
-.bar u{height:5px;border-radius:99px}.bar u s{background:var(--ac);border-radius:99px}.ring circle:last-child{stroke:var(--ac)}.ring b{font-weight:600}
-.stats{padding:20px 28px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg2);margin:30px 0;gap:52px}.stats b{font-size:24px;font-weight:600;letter-spacing:-.02em}
-.hero h1{font-size:46px;line-height:1.08}.art{border-radius:18px;box-shadow:var(--s2)}
-.sec{margin-bottom:18px}.sec h1{font-weight:600}
-.li{border-radius:12px;padding:16px 18px;transition:.15s}.li:hover{border-color:var(--ac);background:var(--bg2)}
-.note{border-radius:12px;padding:12px 16px;line-height:1.55}
-.empty{border-radius:14px;padding:34px 18px}
-main{padding:34px 40px 64px}.page{max-width:1120px}
-aside{padding:26px 22px;gap:20px}
-nav{padding:18px 12px}nav .n{height:42px;border-radius:10px;color:var(--mut);font-weight:500;transition:.15s}nav .n:hover{color:var(--ink)}nav .n.on{background:var(--acs);color:var(--ac);font-weight:600}
-.foot{border-top:1px solid var(--line);font-size:11px}
-select,input[type=text],textarea{border-radius:10px;padding:11px 14px;font-size:14px;transition:.15s}
-select:focus,input[type=text]:focus,textarea:focus{border-color:var(--ac);box-shadow:0 0 0 4px var(--acs)}
-label{font-weight:500;color:var(--mut);font-size:12px}
-input[type=range],input[type=checkbox]{accent-color:var(--ac)}
-pre{border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px}code{border-radius:6px}
-table{font-size:13px}th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);font-weight:600}td,th{padding:10px 12px}
-.md p,.doc p,.md li{line-height:1.75}.md h2{font-size:20px;margin:26px 0 8px}.md h3{margin:20px 0 6px}
-.viz svg{border-radius:12px;background:var(--bg2)}
-.modal{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}.mb{border-radius:18px;box-shadow:var(--s2);padding:26px}
-.toast{border-radius:12px;box-shadow:var(--s2);font-size:13px;background:var(--ink);color:#fff}
-#auth{background:radial-gradient(900px 500px at 50% -10%,var(--acs),transparent 70%),var(--bg)}
-.ab{width:min(420px,100%);padding:36px;border:1px solid var(--line);border-radius:20px;background:var(--bg);box-shadow:var(--s2)}
-.alogo{font-weight:700;margin-bottom:28px}.ab h2{font-size:26px;font-weight:600}
-#auth input{height:44px;border-radius:10px;padding:0 14px;font-size:14px;transition:.15s}#auth input:focus{border-color:var(--ac);box-shadow:0 0 0 4px var(--acs)}
-.ab .btn{height:44px}.am.bad{color:#d92d20}
-@media(min-width:821px){.shell{min-height:calc(100vh - 64px)}nav{top:64px;height:calc(100vh - 64px)}}
-@media(max-width:820px){main{padding:24px 18px 48px}header{padding:0 16px}.hero h1{font-size:34px}.ab{padding:26px}}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js"></script></head><body data-auth="loading">
 <div id="auth"><div class="ab"><p class="mut">Loading…</p></div></div>
